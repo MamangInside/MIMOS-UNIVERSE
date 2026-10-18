@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIMOS Universe – One Intelligence. Multiple Worlds.</title>
 <meta name="description" content="MIMOS Universe: AI trading, games, studio and aquaculture. E-books, EA rental and copy trade by Mang Arte.">
-<link rel="icon" href="assets/logo-icon.webp" type="image/webp">
+<link rel="icon" href="Asset/logo-icon.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== Ganti gambar: taruh file di folder assets/ lalu sesuaikan url() di bawah ===== */
+/* ===== Ganti gambar: taruh file di folder Asset/ lalu sesuaikan url() di bawah ===== */
 :root{
   --bg:#07070a; --panel:#0f0e0c; --line:#4a3a1a; --gold:#e8b84a; --gold2:#f6d98a; --gold3:#a8791f;
   --text:#f2ede2; --muted:#b9b2a2;
@@ -42,7 +42,7 @@ nav a:hover,nav a.on{color:var(--gold2)}
 /* HERO */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
   background:
-    url('assets/hero.jpg') center/cover no-repeat,
+    url('Asset/hero.jpg') center/cover no-repeat,
     radial-gradient(ellipse 60% 70% at 70% 30%,rgba(232,184,74,.28),transparent 60%),
     radial-gradient(ellipse 80% 50% at 50% 110%,rgba(168,121,31,.45),transparent 70%),
     linear-gradient(180deg,#05060d,#0b0a10)}
@@ -72,10 +72,10 @@ section{padding:56px 0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
 .card:hover{border-color:var(--gold)}
 .art{height:150px;background-size:cover;background-position:center}
-.u1{background-image:url('assets/ai-trading.jpg'),linear-gradient(135deg,#0b3b3a,#14213d 60%,#6b4b10)}
-.u2{background-image:url('assets/games.jpg'),linear-gradient(135deg,#2a0f4d,#0d1b3d 60%,#6a1b6a)}
-.u3{background-image:url('assets/studio.jpg'),linear-gradient(135deg,#3a2508,#14110a 60%,#5a3d12)}
-.u4{background-image:url('assets/aquaculture.jpg'),linear-gradient(135deg,#0d3b2a,#0b2a3b 60%,#1f5a3a)}
+.u1{background-image:url('Asset/ai-trading.jpg'),linear-gradient(135deg,#0b3b3a,#14213d 60%,#6b4b10)}
+.u2{background-image:url('Asset/games.jpg'),linear-gradient(135deg,#2a0f4d,#0d1b3d 60%,#6a1b6a)}
+.u3{background-image:url('Asset/studio.jpg'),linear-gradient(135deg,#3a2508,#14110a 60%,#5a3d12)}
+.u4{background-image:url('Asset/aquaculture.jpg'),linear-gradient(135deg,#0d3b2a,#0b2a3b 60%,#1f5a3a)}
 .card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font:700 15px/1.2 var(--body);letter-spacing:.05em}
 .card .tag{color:var(--gold);font-size:12px;font-weight:600}
@@ -86,14 +86,15 @@ section{padding:56px 0}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .chip{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;font:500 12px var(--body);cursor:pointer}
 .chip[aria-pressed="true"]{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1204;border-color:var(--gold)}
-.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.grid5{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .book{position:relative}
 .book .art{height:190px;display:grid;place-items:center;text-align:center;font:700 20px/1.1 var(--display);letter-spacing:.04em;padding:12px}
-.b1{background-image:url('assets/ebook-wick-zone.jpg'),linear-gradient(160deg,#0a2f4a,#0b1020)}
-.b2{background-image:url('assets/ebook-bollinger.jpg'),linear-gradient(160deg,#3b1670,#120a2a)}
-.b3{background-image:url('assets/ebook-candle.jpg'),linear-gradient(160deg,#0b4a2a,#07140d)}
-.b4{background-image:url('assets/ebook-scalping.jpg'),linear-gradient(160deg,#5a3d12,#150f05)}
-.b5{background-image:url('assets/ebook-smc.jpg'),linear-gradient(160deg,#0b3a6a,#08101f)}
+.b1{background-image:url('Asset/ebook-wick-zone.jpg'),linear-gradient(160deg,#0a2f4a,#0b1020)}
+.b2{background-image:url('Asset/ebook-bollinger.jpg'),linear-gradient(160deg,#3b1670,#120a2a)}
+.b3{background-image:url('Asset/ebook-candle.jpg'),linear-gradient(160deg,#0b4a2a,#07140d)}
+.b4{background-image:url('Asset/ebook-scalping.jpg'),linear-gradient(160deg,#5a3d12,#150f05)}
+.b6{background-image:url('Asset/ebook-elliott.jpg'),linear-gradient(160deg,#6a1b3a,#12080d)}
+.b5{background-image:url('Asset/ebook-smc.jpg'),linear-gradient(160deg,#0b3a6a,#08101f)}
 .badge{position:absolute;top:10px;left:10px;z-index:1;background:var(--gold);color:#1a1204;font:700 10px var(--body);padding:3px 8px;border-radius:4px}
 .meta{font-size:12px;color:var(--muted)}
 .price{font-weight:700;color:var(--text)}
@@ -160,7 +161,7 @@ footer a:hover{color:var(--gold2)}
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#home" aria-label="MIMOS Universe"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:36px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a>
+    <a class="logo" href="#home" aria-label="MIMOS Universe"><img src="Asset/logo-icon.webp" alt="" width="55" height="36" style="height:36px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a>
     <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav">
       <a class="on" href="#home">Home</a>
@@ -188,7 +189,7 @@ footer a:hover{color:var(--gold2)}
       </div>
     </div>
     <div class="emblem">
-      <img class="mark" src="assets/logo.webp" alt="MIMOS Universe – silver M with eagle and wings over the earth" width="660" height="680" fetchpriority="high">
+      <img class="mark" src="Asset/logo.webp" alt="MIMOS Universe – silver M with eagle and wings over the earth" width="660" height="680" fetchpriority="high">
       <i>Lesson by Mang Arte</i>
       <ul class="pillars" style="justify-items:center;margin-top:24px">
         <li>AI &amp; Technology</li><li>Education &amp; Knowledge</li><li>Digital Lifestyle</li><li>Sustainable Future</li>
@@ -228,11 +229,12 @@ footer a:hover{color:var(--gold2)}
       <button class="chip" data-f="beginner" aria-pressed="false">Beginner</button>
     </div>
     <div class="grid5" id="books">
-      <article class="card book" data-c="technical pattern beginner"><span class="badge">STARTER</span><div class="art b1 gold">WICK ZONE<br>TRADING</div><div class="body"><h3>Wick Zone Trading</h3><span class="meta">by Mang Arte · 22 pages · EN</span><div class="price">Rp 10.000 <span>| $0.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
-      <article class="card book" data-c="technical beginner"><span class="badge">STARTER</span><div class="art b2 gold">BOLLINGER<br>BANDS BASICS</div><div class="body"><h3>Bollinger Bands Basics</h3><span class="meta">by Mang Arte · 28 pages · EN</span><div class="price">Rp 10.000 <span>| $0.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
-      <article class="card book" data-c="pattern beginner"><span class="badge">STARTER</span><div class="art b3 gold">CANDLE PATTERN<br>ESSENTIALS</div><div class="body"><h3>Candle Pattern Essentials</h3><span class="meta">by Mang Arte · 32 pages · EN</span><div class="price">Rp 10.000 <span>| $0.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
-      <article class="card book" data-c="strategy"><span class="badge">STANDARD</span><div class="art b4 gold">MIMOS<br>SCALPING<br>STRATEGY</div><div class="body"><h3>MIMOS Scalping Strategy</h3><span class="meta">by Mang Arte · 58 pages · EN</span><div class="price">Rp 25.000 <span>| $2.49</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
-      <article class="card book" data-c="smc strategy"><span class="badge">STANDARD</span><div class="art b5 gold">SMART MONEY<br>CONCEPTS</div><div class="body"><h3>SMC &amp; Order Block</h3><span class="meta">by Mang Arte · 64 pages · EN</span><div class="price">Rp 25.000 <span>| $2.49</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="technical pattern beginner"><span class="badge">STARTER</span><div class="art b1 gold">WICK ZONE<br>TRADING</div><div class="body"><h3>Wick Zone Trading</h3><span class="meta">by Mang Arte · 22 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="technical beginner"><span class="badge">STARTER</span><div class="art b2 gold">BOLLINGER<br>BANDS BASICS</div><div class="body"><h3>Bollinger Bands Basics</h3><span class="meta">by Mang Arte · 28 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="pattern beginner"><span class="badge">STARTER</span><div class="art b3 gold">CANDLE PATTERN<br>ESSENTIALS</div><div class="body"><h3>Candle Pattern Essentials</h3><span class="meta">by Mang Arte · 32 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="strategy"><span class="badge">STANDARD</span><div class="art b4 gold">MIMOS<br>SCALPING<br>STRATEGY</div><div class="body"><h3>MIMOS Scalping Strategy</h3><span class="meta">by Mang Arte · 58 pages · EN</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="smc strategy"><span class="badge">STANDARD</span><div class="art b5 gold">SMART MONEY<br>CONCEPTS</div><div class="body"><h3>SMC &amp; Order Block</h3><span class="meta">by Mang Arte · 64 pages · EN</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="elliott technical"><span class="badge">PREMIUM</span><div class="art b6 gold">ELLIOTT<br>WAVE</div><div class="body"><h3>Elliott Wave Lesson</h3><span class="meta">by Mang Arte · 25 chapters · EN</span><div class="price">Rp 75.000 <span>| $6.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
     </div>
     <p id="empty" class="meta" hidden style="margin-top:12px">No e-books in this category yet.</p>
   </div>
@@ -261,7 +263,7 @@ footer a:hover{color:var(--gold2)}
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><a class="logo" href="#home"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:34px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a><p style="margin-top:12px">ONE INTELLIGENCE. MULTIPLE WORLDS.</p></div>
+      <div><a class="logo" href="#home"><img src="Asset/logo-icon.webp" alt="" width="55" height="36" style="height:34px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a><p style="margin-top:12px">ONE INTELLIGENCE. MULTIPLE WORLDS.</p></div>
       <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#universe">Universe</a></li><li><a href="#store">Store</a></li><li><a href="#store">E-Books</a></li><li><a href="#rent-ea">Rent EA</a></li><li><a href="#copy-trade">Copy Trade</a></li></ul></div>
       <div><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Payment Guide</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Refund Policy</a></li></ul></div>
       <div><h4>Payment Methods</h4><div class="pay"><span>PayPal</span><span>DANA</span><span>QRIS</span></div><p class="meta" style="margin-top:8px">(Indonesia)</p></div>
