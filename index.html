@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIMOS Universe – One Intelligence. Multiple Worlds.</title>
+<meta name="description" content="MIMOS Universe: AI trading, games, studio and aquaculture. E-books, EA rental and copy trade by Mang Arte.">
+<link rel="icon" href="assets/logo-icon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Ganti gambar: taruh file di folder assets/ lalu sesuaikan url() di bawah ===== */
+:root{
+  --bg:#07070a; --panel:#0f0e0c; --line:#4a3a1a; --gold:#e8b84a; --gold2:#f6d98a; --gold3:#a8791f;
+  --text:#f2ede2; --muted:#b9b2a2;
+  --display:'Cinzel',Georgia,serif; --body:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 15px/1.6 var(--body)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;font-size:13px;border:1px solid var(--gold);transition:background .2s,color .2s}
+.btn.solid{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1204}
+.btn.solid:hover{background:var(--gold2)}
+.btn.ghost{color:var(--gold2)}
+.btn.ghost:hover{background:rgba(232,184,74,.12)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:20;background:rgba(7,7,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:64px}
+.logo{font-family:var(--display);font-size:24px;letter-spacing:.14em;display:flex;align-items:center;gap:10px}
+.logo small{font-size:8px;letter-spacing:.5em;display:block;color:var(--gold);margin-top:-4px}
+nav{margin-left:auto;display:flex;gap:22px;font-size:13px;color:var(--muted)}
+nav a:hover,nav a.on{color:var(--gold2)}
+.menu{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--gold2);border-radius:6px;padding:6px 12px;font:inherit}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:
+    url('assets/hero.jpg') center/cover no-repeat,
+    radial-gradient(ellipse 60% 70% at 70% 30%,rgba(232,184,74,.28),transparent 60%),
+    radial-gradient(ellipse 80% 50% at 50% 110%,rgba(168,121,31,.45),transparent 70%),
+    linear-gradient(180deg,#05060d,#0b0a10)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;min-height:540px;padding-block:56px}
+.hero .eyebrow{font-size:14px;letter-spacing:.12em;margin-bottom:6px}
+.hero h1{font:700 clamp(44px,8vw,84px)/.98 var(--display);letter-spacing:.03em}
+.hero h1 span{display:block}
+.hero h2{font:600 20px/1.3 var(--body);letter-spacing:.14em;color:var(--gold);margin:22px 0 12px}
+.hero p{max-width:44ch;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.emblem{text-align:center}
+.emblem .eagle{font-size:clamp(120px,22vw,220px);line-height:1;filter:drop-shadow(0 0 40px rgba(232,184,74,.5))}
+.emblem b{display:block;font:700 clamp(36px,6vw,64px)/1 var(--display);letter-spacing:.06em}
+.emblem i{display:block;font:italic 500 18px var(--display);color:var(--gold2);margin-top:8px}
+.pillars{list-style:none;display:grid;gap:12px;margin-top:20px;font-size:13px;color:var(--muted)}
+.pillars li::before{content:"✦ ";color:var(--gold)}
+.emblem .mark{width:min(100%,500px);height:auto;margin-inline:auto;display:block;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%)}
+
+/* SECTIONS */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.sec-head h2{font:700 28px/1.1 var(--display);letter-spacing:.06em}
+.sec-head p{color:var(--muted);font-size:14px;margin-top:4px}
+.more{font-size:13px;color:var(--gold2);border-bottom:1px solid var(--gold3)}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
+.card:hover{border-color:var(--gold)}
+.art{height:150px;background-size:cover;background-position:center}
+.u1{background-image:url('assets/ai-trading.jpg'),linear-gradient(135deg,#0b3b3a,#14213d 60%,#6b4b10)}
+.u2{background-image:url('assets/games.jpg'),linear-gradient(135deg,#2a0f4d,#0d1b3d 60%,#6a1b6a)}
+.u3{background-image:url('assets/studio.jpg'),linear-gradient(135deg,#3a2508,#14110a 60%,#5a3d12)}
+.u4{background-image:url('assets/aquaculture.jpg'),linear-gradient(135deg,#0d3b2a,#0b2a3b 60%,#1f5a3a)}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font:700 15px/1.2 var(--body);letter-spacing:.05em}
+.card .tag{color:var(--gold);font-size:12px;font-weight:600}
+.card p{color:var(--muted);font-size:13px}
+.card .go{margin-top:auto;padding-top:10px;color:var(--gold2);font-size:13px;font-weight:600}
+
+/* STORE */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;font:500 12px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1204;border-color:var(--gold)}
+.grid5{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.book{position:relative}
+.cover{display:block;width:100%;aspect-ratio:3/4;object-fit:contain;padding:10px 10px 0;background:#0a0a0c;border-radius:6px}
+.book .art{height:190px;display:grid;place-items:center;text-align:center;font:700 20px/1.1 var(--display);letter-spacing:.04em;padding:12px}
+.b1{background-image:url('assets/ebook-wick-zone.jpg'),linear-gradient(160deg,#0a2f4a,#0b1020)}
+.b2{background-image:url('assets/ebook-bollinger.jpg'),linear-gradient(160deg,#3b1670,#120a2a)}
+.b3{background-image:url('assets/ebook-candle.jpg'),linear-gradient(160deg,#0b4a2a,#07140d)}
+.b4{background-image:url('assets/ebook-scalping.jpg'),linear-gradient(160deg,#5a3d12,#150f05)}
+.b6{background-image:url('assets/ebook-elliott.jpg'),linear-gradient(160deg,#6a1b3a,#12080d)}
+.b5{background-image:url('assets/ebook-smc.jpg'),linear-gradient(160deg,#0b3a6a,#08101f)}
+.badge{position:absolute;top:10px;left:10px;z-index:1;background:var(--gold);color:#1a1204;font:700 10px var(--body);padding:3px 8px;border-radius:4px}
+.meta{font-size:12px;color:var(--muted)}
+.price{font-weight:700;color:var(--text)}
+.price span{color:var(--muted);font-weight:500}
+.book .btn{justify-content:center;margin-top:8px;padding:10px}
+.book .body{padding:12px}.book h3{font-size:13px}
+.book[hidden]{display:none}
+
+/* PROMO */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.promo{padding:24px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(120deg,var(--panel),#1a1408);display:flex;flex-direction:column;gap:8px;min-height:190px}
+.promo h3{font:700 20px var(--display);letter-spacing:.06em;color:var(--gold2)}
+.promo p{color:var(--muted);font-size:13px;max-width:34ch}
+.promo .btn{margin-top:auto;align-self:flex-start}
+
+/* JOIN */
+.join{border-block:1px solid var(--line);background:#0a0906}
+.join .wrap{display:grid;grid-template-columns:1.3fr repeat(4,1fr) auto;gap:20px;align-items:center}
+.join h2{font:700 22px/1.15 var(--display);letter-spacing:.05em;border-left:2px solid var(--gold);padding-left:14px}
+.join h2 small{display:block;font:400 12px var(--body);color:var(--muted);letter-spacing:0;margin-top:6px}
+.feat{font-size:12px;color:var(--muted);text-align:center}
+.feat b{display:block;color:var(--text);font-size:13px}
+.feat::before{content:"✦";display:block;color:var(--gold);font-size:20px}
+
+/* FOOTER */
+footer{padding:40px 0 24px;font-size:13px;color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr 1fr;gap:28px}
+footer h4{color:var(--text);font-size:13px;margin-bottom:10px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a:hover{color:var(--gold2)}
+.pay{display:flex;flex-wrap:wrap;gap:8px}
+.pay span{border:1px solid var(--line);border-radius:6px;padding:4px 10px;color:var(--text);font-weight:600;font-size:12px}
+.social{display:flex;gap:10px}
+.social a{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px;color:var(--gold2)}
+.risk{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
+.copy{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
+.copy em{color:var(--gold)}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .grid5{grid-template-columns:repeat(3,1fr)}
+  .join .wrap{grid-template-columns:repeat(4,1fr)}
+  .join h2,.join .btn{grid-column:1/-1}
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .menu{display:block}
+  nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:16px;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-block:40px}
+  .emblem{order:-1}
+  .emblem .mark{width:min(100%,340px)}
+  .grid3{grid-template-columns:1fr}
+  .grid5{grid-template-columns:repeat(2,1fr)}
+  .join .wrap{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .grid4{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home" aria-label="MIMOS Universe"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:36px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a class="on" href="#home">Home</a>
+      <a href="#universe">Universe</a>
+      <a href="#store">E-Books</a>
+      <a href="#rent-ea">Rent EA</a>
+      <a href="#copy-trade">Copy Trade</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">WELCOME TO</div>
+      <h1><span>MIMOS</span><span class="gold">UNIVERSE</span></h1>
+      <h2>ONE INTELLIGENCE.<br>MULTIPLE WORLDS.</h2>
+      <p>We build intelligent systems, digital experiences, and real-world solutions for a smarter and more prosperous future.</p>
+      <div class="cta">
+        <a class="btn solid" href="#universe">Explore Universe</a>
+        <a class="btn ghost" href="#store">Explore Store</a>
+      </div>
+    </div>
+    <div class="emblem">
+      <img class="mark" src="assets/logo.webp" alt="MIMOS Universe – silver M with eagle and wings over the earth" width="660" height="680" fetchpriority="high">
+      <i>Lesson by Mang Arte</i>
+      <ul class="pillars" style="justify-items:center;margin-top:24px">
+        <li>AI &amp; Technology</li><li>Education &amp; Knowledge</li><li>Digital Lifestyle</li><li>Sustainable Future</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="universe">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 class="gold">OUR UNIVERSE</h2><p>Four projects. One ecosystem.</p></div>
+      <a class="more" href="#universe">Explore all projects</a>
+    </div>
+    <div class="grid4">
+      <a class="card" href="#"><div class="art u1"></div><div class="body"><h3>MIMOS AI TRADING</h3><span class="tag">Smarter analysis. Better decisions.</span><p>AI-powered trading solutions, expert tools, and real market strategies.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="#"><div class="art u2"></div><div class="body"><h3>MIMOS GAMES</h3><span class="tag">Play. Explore. Enjoy.</span><p>Immersive games, interactive experiences, and digital entertainment.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="#"><div class="art u3"></div><div class="body"><h3>MIMOS STUDIO</h3><span class="tag">Ideas become reality.</span><p>Branding, design, production, and creative services for your vision.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="#"><div class="art u4"></div><div class="body"><h3>MIMOS AI AQUACULTURE</h3><span class="tag">Smart farming. Sustainable future.</span><p>AI-driven aquaculture technology for a healthier planet.</p><span class="go">Explore</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="store" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 class="gold">MIMOS KNOWLEDGE STORE</h2><p>E-books for smarter traders. Learn. Apply. Grow.</p></div>
+      <a class="more" href="#">View all e-books</a>
+    </div>
+    <div class="chips" role="group" aria-label="Filter e-books">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="strategy" aria-pressed="false">Trading Strategy</button>
+      <button class="chip" data-f="technical" aria-pressed="false">Technical Analysis</button>
+      <button class="chip" data-f="smc" aria-pressed="false">SMC &amp; Order Block</button>
+      <button class="chip" data-f="elliott" aria-pressed="false">Elliott Wave</button>
+      <button class="chip" data-f="pattern" aria-pressed="false">Chart Pattern</button>
+      <button class="chip" data-f="beginner" aria-pressed="false">Beginner</button>
+    </div>
+    <div class="grid5" id="books">
+      <article class="card book" data-c="technical pattern beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-wick-zone.jpg" alt="Cover e-book Wick Zone Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Wick Zone Trading</h3><span class="meta">by Mang Arte · 22 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="technical beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-bollinger.jpg" alt="Cover e-book Bollinger Band Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Bollinger Bands Basics</h3><span class="meta">by Mang Arte · 28 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="pattern beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-candle.jpg" alt="Cover e-book Candle Lesson Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Candle Pattern Essentials</h3><span class="meta">by Mang Arte · 32 pages · EN</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="strategy"><span class="badge">STANDARD</span><img class="cover" src="assets/ebook-scalping.jpg" alt="Cover e-book Scalping Strategy Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>MIMOS Scalping Strategy</h3><span class="meta">by Mang Arte · 58 pages · EN</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="smc strategy"><span class="badge">STANDARD</span><img class="cover" src="assets/ebook-smc.jpg" alt="Cover e-book Smart Money Concept Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>SMC &amp; Order Block</h3><span class="meta">by Mang Arte · 64 pages · EN</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+      <article class="card book" data-c="elliott technical"><span class="badge">PREMIUM</span><img class="cover" src="assets/ebook-elliott.jpg" alt="Cover e-book Elliott Wave Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Elliott Wave Lesson</h3><span class="meta">by Mang Arte · 25 chapters · EN</span><div class="price">Rp 75.000 <span>| $6.99</span></div><a class="btn ghost" href="#">Add to Cart</a></div></article>
+    </div>
+    <p id="empty" class="meta" hidden style="margin-top:12px">No e-books in this category yet.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap grid3">
+    <div class="promo" id="rent-ea"><h3>RENT EA</h3><p>Automate your trading. Professional Expert Advisors with proven strategies and backtest results.</p><a class="btn ghost" href="#">Browse EA</a></div>
+    <div class="promo" id="copy-trade"><h3>COPY TRADE</h3><p>Follow the professionals. Transparent performance, low risk, and real results.</p><a class="btn ghost" href="#">View performance</a></div>
+    <div class="promo" id="about"><h3>MIMOS LABS</h3><p>Innovation in progress. Exploring new technologies and future projects for a sustainable tomorrow.</p><a class="btn ghost" href="#">Discover Labs</a></div>
+  </div>
+</section>
+
+<div class="join" id="contact">
+  <div class="wrap" style="padding-block:28px">
+    <h2 class="gold">START YOUR<br>JOURNEY TODAY<small>Learn. Trade. Grow. Be part of MIMOS Universe.</small></h2>
+    <div class="feat"><b>Global Access</b>International &amp; local</div>
+    <div class="feat"><b>Secure Payment</b>PayPal / DANA / QRIS</div>
+    <div class="feat"><b>Instant Delivery</b>E-book &amp; access</div>
+    <div class="feat"><b>24/7 Support</b>We’re here for you</div>
+    <a class="btn solid" href="#">Join MIMOS Universe</a>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="#home"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:34px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a><p style="margin-top:12px">ONE INTELLIGENCE. MULTIPLE WORLDS.</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#universe">Universe</a></li><li><a href="#store">Store</a></li><li><a href="#store">E-Books</a></li><li><a href="#rent-ea">Rent EA</a></li><li><a href="#copy-trade">Copy Trade</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Payment Guide</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+      <div><h4>Payment Methods</h4><div class="pay"><span>PayPal</span><span>DANA</span><span>QRIS</span></div><p class="meta" style="margin-top:8px">(Indonesia)</p></div>
+      <div><h4>Follow Us</h4><div class="social"><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="Discord">DC</a><a href="#" aria-label="X">X</a><a href="#" aria-label="Instagram">IG</a></div></div>
+    </div>
+    <p class="risk"><b>Risk warning:</b> Trading forex, gold, and other leveraged products carries a high risk of loss and is not suitable for everyone. All content, e-books, and tools are for education only and are not financial advice. Past performance does not guarantee future results.</p>
+    <div class="copy"><span>© 2026 MIMOS Universe. All rights reserved.</span><em>Maximizing the Minimize.</em></div>
+  </div>
+</footer>
+
+<script>
+// Menu mobile
+const btn=document.querySelector('.menu'),nav=document.getElementById('nav');
+btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}});
+// Filter e-book
+const chips=document.querySelectorAll('.chip'),books=document.querySelectorAll('.book'),empty=document.getElementById('empty');
+chips.forEach(c=>c.addEventListener('click',()=>{
+  chips.forEach(x=>x.setAttribute('aria-pressed',x===c));
+  const f=c.dataset.f;let n=0;
+  books.forEach(b=>{const show=f==='all'||b.dataset.c.split(' ').includes(f);b.hidden=!show;if(show)n++});
+  empty.hidden=n>0;
+}));
+</script>
+<script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+// Hitung klik tombol di GoatCounter (lihat di dashboard bagian Events)
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a,.chip'); if(!a) return;
+  const t=x=>x?x.textContent.trim():'';
+  let n;
+  if(a.classList.contains('btn')) n=a.closest('.book')?'Add to Cart: '+t(a.closest('.book').querySelector('h3')):'Tombol: '+t(a);
+  else if(a.classList.contains('card')) n='Universe: '+t(a.querySelector('h3'));
+  else if(a.classList.contains('chip')) n='Filter: '+t(a);
+  else return;
+  try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:'klik/'+n,title:n,event:true}); }catch(_){}
+});
+</script>
+</body>
+</html>
