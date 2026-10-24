@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-title-id="Ringkasan Pemesanan – MIMOS Universe" data-title-en="Order Summary – MIMOS Universe">
 <head>
 <meta charset="utf-8">
+<script src="i18n.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ringkasan Pemesanan – MIMOS Universe</title>
 <meta name="robots" content="noindex">
+<title>Ringkasan Pemesanan – MIMOS Universe</title>
 <link rel="icon" href="assets/logo-icon.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +13,39 @@
 <style>
 :root{--bg:#07070a;--panel:#0f0e0c;--line:#4a3a1a;--gold:#e8b84a;--gold2:#f6d98a;--text:#f2ede2;--muted:#b9b2a2;--danger:#f09595;--display:'Cinzel',Georgia,serif;--body:'Montserrat',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font:400 15px/1.7 var(--body)}
+body{background:var(--bg);color:var(--text);font:400 15px/1.75 var(--body)}
 a{color:var(--gold2)}
 :focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
 header{position:sticky;top:0;z-index:5;background:rgba(7,7,10,.94);border-bottom:1px solid var(--line)}
-.bar{width:min(620px,100% - 32px);margin-inline:auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 20px var(--display);letter-spacing:.14em;color:var(--gold)}
-.brand img{height:32px;width:auto}
+.bar{width:min(620px,100% - 32px);margin-inline:auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.right{display:flex;align-items:center;gap:8px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font:500 19px var(--display);letter-spacing:.12em;color:var(--gold)}
+.brand img{height:30px;width:auto}
+.back{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 13px;border:1px solid var(--gold);border-radius:8px;font:600 13px var(--body);text-decoration:none;color:var(--gold2);background:none;cursor:pointer}
+.back:hover{background:rgba(232,184,74,.12)}
+.back.solid{background:var(--gold);color:#1a1204}
+.back.solid:hover{background:var(--gold2)}
+main{width:min(620px,100% - 32px);margin:32px auto 56px}
+h1{font:700 clamp(24px,5vw,36px)/1.15 var(--display);letter-spacing:.04em;color:var(--gold);margin-bottom:6px}
+.upd,.sub{color:var(--muted);font-size:13px;margin-bottom:24px}
+h2{font:600 17px/1.3 var(--body);color:var(--gold2);margin:26px 0 8px}
+p{margin-bottom:10px}
+ul{margin:0 0 10px 20px}
+li{margin-bottom:4px}
+.note{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
+.cta{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:var(--muted);font-size:12px}
+
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 18px;border:1px solid var(--gold);border-radius:8px;font:600 14px var(--body);text-decoration:none;color:var(--gold2);background:none;cursor:pointer;width:100%}
 .btn:hover{background:rgba(232,184,74,.12)}
 .btn.solid{background:var(--gold);color:#1a1204}
 .btn.solid:hover{background:var(--gold2)}
-.btn.sm{width:auto;padding:9px 16px;font-size:13px}
-main{width:min(620px,100% - 32px);margin:28px auto 56px}
-h1{font:700 clamp(24px,5vw,32px)/1.15 var(--display);letter-spacing:.04em;color:var(--gold);margin-bottom:4px}
-.sub{color:var(--muted);font-size:14px;margin-bottom:20px}
 .steps{display:flex;gap:8px;font-size:12px;color:var(--muted);margin-bottom:22px;flex-wrap:wrap}
 .steps b{color:var(--gold2);font-weight:600}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
 .item{display:flex;gap:16px;align-items:center}
 .item img{width:96px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:8px;border:1px solid var(--line);flex:none;background:#14110a}
-.item h2{font:600 18px/1.3 var(--body)}
+.item h2{font:600 18px/1.3 var(--body);color:var(--text);margin:0}
 .meta{font-size:13px;color:var(--muted);margin:2px 0 8px}
 .price{font-size:22px;font-weight:600}
 .price span{font-size:14px;font-weight:400;color:var(--muted)}
@@ -46,60 +59,49 @@ h1{font:700 clamp(24px,5vw,32px)/1.15 var(--display);letter-spacing:.04em;color:
 .pay{display:grid;gap:10px}
 .status{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;min-height:18px}
 .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:13px}
-footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:var(--muted);font-size:12px}
 </style>
-</head>
-<body>
+</head><body>
 <header><div class="bar">
   <a class="brand" href="index.html"><img src="assets/logo-icon.webp" alt="" width="55" height="36">MIMOS</a>
-  <a class="btn sm" href="index.html#store">&larr; Kembali ke toko</a>
+  <div class="right"><div class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><a class="back" href="index.html#store">&larr; <span data-l="id">Kembali ke toko</span><span data-l="en">Back to store</span></a></div>
 </div></header>
-
 <main>
-<h1>Ringkasan pemesanan</h1>
-<p class="sub">Periksa pesananmu, lalu lanjut ke pembayaran.</p>
-<div class="steps"><span><b>1. Pilih e-book</b></span><span>›</span><span><b>2. Ringkasan</b></span><span>›</span><span>3. Bayar di Sociabuzz</span><span>›</span><span>4. File dikirim ke email</span></div>
+<h1><span data-l="id">Ringkasan pemesanan</span><span data-l="en">Order summary</span></h1>
+<p class="sub"><span data-l="id">Periksa pesananmu, lalu lanjut ke pembayaran.</span><span data-l="en">Review your order, then continue to payment.</span></p>
+<div class="steps"><span><b><span data-l="id">1. Pilih e-book</span><span data-l="en">1. Choose e-book</span></b></span><span>›</span><span><b><span data-l="id">2. Ringkasan</span><span data-l="en">2. Summary</span></b></span><span>›</span><span><span data-l="id">3. Bayar di Sociabuzz</span><span data-l="en">3. Pay on Sociabuzz</span></span><span>›</span><span><span data-l="id">4. File dikirim ke email</span><span data-l="en">4. File sent to your email</span></span></div>
 
 <section id="order" hidden>
   <div class="card item">
     <img id="cover" src="" alt="" width="96" height="128">
-    <div>
-      <h2 id="title"></h2>
-      <div class="meta" id="meta"></div>
-      <div class="price" id="price"></div>
-    </div>
+    <div><h2 id="title"></h2><div class="meta" id="meta"></div><div class="price" id="price"></div></div>
   </div>
-
   <div class="card info">
-    <div><i>✉</i><span>Link download dikirim ke email yang kamu isi saat pembayaran, setelah pembayaran terkonfirmasi.</span></div>
-    <div><i>🔒</i><span>Pembayaran diproses di halaman Sociabuzz. Pilih metode bayar di sana.</span></div>
-    <div><i>⚠</i><span>File sudah terkirim tidak bisa direfund. Jika file rusak atau salah kirim, lapor maksimal 1 × 24 jam.</span></div>
+    <div><i>✉</i><span><span data-l="id">Link download dikirim ke email yang kamu isi saat pembayaran, setelah pembayaran terkonfirmasi.</span><span data-l="en">The download link is sent to the email you enter at payment, after payment is confirmed.</span></span></div>
+    <div><i>🔒</i><span><span data-l="id">Pembayaran diproses di halaman Sociabuzz. Pilih metode bayar di sana.</span><span data-l="en">Payment is processed on the Sociabuzz page. Choose your payment method there.</span></span></div>
+    <div><i>⚠</i><span><span data-l="id">File yang sudah terkirim tidak bisa direfund. Jika file rusak atau salah kirim, lapor maksimal 1 × 24 jam.</span><span data-l="en">Files that have been sent cannot be refunded. If the file is corrupted or the wrong one was sent, report within 24 hours.</span></span></div>
   </div>
-
   <div class="card">
     <label class="agree">
       <input type="checkbox" id="ok">
-      <span>Saya setuju dengan <a href="syarat-layanan.html" target="_blank" rel="noopener">Syarat Layanan</a> dan <a href="kebijakan-refund.html" target="_blank" rel="noopener">Kebijakan Refund</a>.</span>
+      <span data-l="id">Saya setuju dengan <a href="syarat-layanan.html" target="_blank" rel="noopener">Syarat Layanan</a> dan <a href="kebijakan-refund.html" target="_blank" rel="noopener">Kebijakan Refund</a>.</span>
+      <span data-l="en">I agree to the <a href="syarat-layanan.html" target="_blank" rel="noopener">Terms of Service</a> and the <a href="kebijakan-refund.html" target="_blank" rel="noopener">Refund Policy</a>.</span>
     </label>
-    <p class="risk">Trading berisiko tinggi. Konten ini edukasi, bukan saran keuangan.</p>
+    <p class="risk"><span data-l="id">Trading berisiko tinggi. Konten ini edukasi, bukan saran keuangan.</span><span data-l="en">Trading carries high risk. This content is educational, not financial advice.</span></p>
     <div class="err" id="err" role="alert"></div>
     <div class="pay">
-      <button class="btn solid" id="payId" type="button">Bayar sekarang (Indonesia)</button>
-      <button class="btn" id="payInt" type="button">Pay now (international)</button>
+      <button class="btn solid" id="payId" type="button"><span data-l="id">Bayar sekarang (Indonesia)</span><span data-l="en">Pay now (Indonesia)</span></button>
+      <button class="btn" id="payInt" type="button"><span data-l="id">Bayar sekarang (internasional)</span><span data-l="en">Pay now (international)</span></button>
     </div>
     <div class="status" id="status"></div>
   </div>
-  <div class="foot"><a href="index.html#store">&larr; Pilih e-book lain</a><a href="mailto:mimos.universe.official@gmail.com">Butuh bantuan?</a></div>
+  <div class="foot"><a href="index.html#store">&larr; <span data-l="id">Pilih e-book lain</span><span data-l="en">Choose another e-book</span></a><a href="mailto:mimos.universe.official@gmail.com"><span data-l="id">Butuh bantuan?</span><span data-l="en">Need help?</span></a></div>
 </section>
 
 <section id="missing" hidden>
-  <div class="card">
-    <p style="margin-bottom:14px">E-book yang kamu pilih tidak ditemukan. Silakan pilih lagi dari toko.</p>
-    <a class="btn solid" href="index.html#store">Ke toko e-book</a>
-  </div>
+  <div class="card"><p style="margin-bottom:14px"><span data-l="id">E-book yang kamu pilih tidak ditemukan. Silakan pilih lagi dari toko.</span><span data-l="en">We couldn’t find the e-book you selected. Please choose again from the store.</span></p><a class="btn solid" href="index.html#store"><span data-l="id">Ke toko e-book</span><span data-l="en">Go to the e-book store</span></a></div>
 </section>
 </main>
-<footer>© 2026 MIMOS Universe. All rights reserved.</footer>
+<footer>© 2026 MIMOS Universe. <span data-l="id">Hak cipta dilindungi.</span><span data-l="en">All rights reserved.</span></footer>
 
 <script>
 /* ============ ISI LINK SOCIABUZZ DI SINI ============
@@ -107,40 +109,50 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
    int = link pembayaran untuk pembeli luar negeri
    Kosongkan ('') kalau belum ada. */
 var PRODUK = {
-  'wick-zone':  {judul:'Wick Zone Trading',        meta:'by Mang Arte · 22 pages',    idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-wick-zone',   id:'', int:''},
-  'bollinger':  {judul:'Bollinger Bands Basics',   meta:'by Mang Arte · 28 pages',    idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-bollinger',   id:'', int:''},
-  'candle':     {judul:'Candle Pattern Essentials',meta:'by Mang Arte · 32 pages',    idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-candle',      id:'', int:''},
-  'scalping':   {judul:'MIMOS Scalping Strategy',  meta:'by Mang Arte · 58 pages',    idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-scalping',    id:'', int:''},
-  'smc':        {judul:'SMC & Order Block',        meta:'by Mang Arte · 64 pages',    idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-smc',         id:'', int:''},
-  'elliott':    {judul:'Elliott Wave Lesson',      meta:'by Mang Arte · 25 chapters', idr:'Rp 75.000',  usd:'$6.99',  cover:'ebook-elliott',     id:'', int:''},
-  'full-margin':{judul:'Trading Full Margin ala Mang Arte', meta:'by Mang Arte · 12 pages · Timeframe M1', idr:'Rp 250.000', usd:'$22.99', cover:'ebook-full-margin', id:'', int:''}
+  'wick-zone':  {judul:'Wick Zone Trading',        n:22, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-wick-zone',   id:'', int:''},
+  'bollinger':  {judul:'Bollinger Bands Basics',   n:28, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-bollinger',   id:'', int:''},
+  'candle':     {judul:'Candle Pattern Essentials',n:32, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-candle',      id:'', int:''},
+  'scalping':   {judul:'MIMOS Scalping Strategy',  n:58, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-scalping',    id:'', int:''},
+  'smc':        {judul:'SMC & Order Block',        n:64, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-smc',         id:'', int:''},
+  'elliott':    {judul:'Elliott Wave Lesson',      n:25, unit:'c', idr:'Rp 75.000',  usd:'$6.99',  cover:'ebook-elliott',     id:'', int:''},
+  'full-margin':{judul:'Trading Full Margin ala Mang Arte', n:12, unit:'p', extra:'Timeframe M1', idr:'Rp 250.000', usd:'$22.99', cover:'ebook-full-margin', id:'', int:''}
 };
-
+var TXT={
+  id:{cek:'Centang persetujuan dulu untuk lanjut.',na:'Pembayaran untuk produk ini belum tersedia. Hubungi mimos.universe.official@gmail.com.',go:'Mengalihkan ke Sociabuzz…',by:'oleh Mang Arte',p:'halaman',c:'bab',lang:'Bahasa Indonesia',alt:'Cover e-book ',pesan:'Pesan '},
+  en:{cek:'Please tick the agreement box to continue.',na:'Payment for this product is not available yet. Contact mimos.universe.official@gmail.com.',go:'Redirecting to Sociabuzz…',by:'by Mang Arte',p:'pages',c:'chapters',lang:'Indonesian',alt:'E-book cover: ',pesan:'Order '}
+};
+var L=function(){return window.mimosLang?window.mimosLang():'id'};
 var kode=new URLSearchParams(location.search).get('p');
 var p=Object.prototype.hasOwnProperty.call(PRODUK,kode)?PRODUK[kode]:null;
 var $=function(i){return document.getElementById(i)};
-if(!p){ $('missing').hidden=false; }
-else{
+function render(){
+  var t=TXT[L()];
+  if(!p){ $('missing').hidden=false; return; }
   $('order').hidden=false;
-  document.title='Pesan '+p.judul+' – MIMOS Universe';
+  document.title=t.pesan+p.judul+' – MIMOS Universe';
   $('title').textContent=p.judul;
-  $('meta').textContent=p.meta;
+  $('meta').textContent=t.by+' · '+p.n+' '+(p.unit==='c'?t.c:t.p)+(p.extra?' · '+p.extra:'')+' · '+t.lang;
   var pr=$('price'); pr.textContent=p.idr+' '; var sp=document.createElement('span'); sp.textContent='| '+p.usd; pr.appendChild(sp);
-  var c=$('cover'); c.src='assets/'+p.cover+'.jpg'; c.alt='Cover e-book '+p.judul;
+  var c=$('cover'); c.src='assets/'+p.cover+'.jpg'; c.alt=t.alt+p.judul;
+  $('err').textContent=''; $('status').textContent='';
+}
+function bayar(jenis){
+  var t=TXT[L()]; $('status').textContent='';
+  if(!$('ok').checked){ $('err').textContent=t.cek; return; }
+  $('err').textContent='';
+  var url=p[jenis];
+  try{ if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'klik/Bayar '+(jenis==='id'?'ID':'INT')+': '+p.judul,title:p.judul,event:true}); } }catch(_){}
+  if(!url){ $('status').textContent=t.na; return; }
+  $('status').textContent=t.go;
+  setTimeout(function(){ location.href=url; },250);
+}
+if(p){
   $('ok').addEventListener('change',function(){$('err').textContent='';});
-  function bayar(jenis){
-    $('status').textContent='';
-    if(!$('ok').checked){ $('err').textContent='Centang persetujuan dulu untuk lanjut.'; return; }
-    $('err').textContent='';
-    var url=p[jenis];
-    try{ if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'klik/Bayar '+(jenis==='id'?'ID':'INT')+': '+p.judul,title:p.judul,event:true}); } }catch(_){}
-    if(!url){ $('status').textContent='Pembayaran untuk produk ini belum tersedia. Hubungi mimos.universe.official@gmail.com.'; return; }
-    $('status').textContent='Mengalihkan ke Sociabuzz…';
-    setTimeout(function(){ location.href=url; },250);
-  }
   $('payId').addEventListener('click',function(){bayar('id')});
   $('payInt').addEventListener('click',function(){bayar('int')});
 }
+document.addEventListener('langchange',render);
+render();
 </script>
 <script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
