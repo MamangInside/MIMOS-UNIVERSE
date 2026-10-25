@@ -78,6 +78,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
   <div class="card info">
     <div><i>✉</i><span><span data-l="id">Link download dikirim ke email yang kamu isi saat pembayaran, setelah pembayaran terkonfirmasi.</span><span data-l="en">The download link is sent to the email you enter at payment, after payment is confirmed.</span></span></div>
     <div><i>🔒</i><span><span data-l="id">Pembayaran diproses di halaman Sociabuzz. Pilih metode bayar di sana.</span><span data-l="en">Payment is processed on the Sociabuzz page. Choose your payment method there.</span></span></div>
+    <div><i>→</i><span id="pick"></span></div>
     <div><i>⚠</i><span><span data-l="id">File yang sudah terkirim tidak bisa direfund. Jika file rusak atau salah kirim, lapor maksimal 1 × 24 jam.</span><span data-l="en">Files that have been sent cannot be refunded. If the file is corrupted or the wrong one was sent, report within 24 hours.</span></span></div>
   </div>
   <div class="card">
@@ -89,7 +90,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
     <p class="risk"><span data-l="id">Trading berisiko tinggi. Konten ini edukasi, bukan saran keuangan.</span><span data-l="en">Trading carries high risk. This content is educational, not financial advice.</span></p>
     <div class="err" id="err" role="alert"></div>
     <div class="pay">
-      <button class="btn solid" id="payId" type="button"><span data-l="id">Bayar sekarang (Indonesia)</span><span data-l="en">Pay now (Indonesia)</span></button>
+      <button class="btn solid" id="payId" type="button"><span data-l="id">Bayar sekarang</span><span data-l="en">Pay now</span></button>
       <button class="btn" id="payInt" type="button"><span data-l="id">Bayar sekarang (internasional)</span><span data-l="en">Pay now (international)</span></button>
     </div>
     <div class="status" id="status"></div>
@@ -108,18 +109,19 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
    id  = link pembayaran untuk pembeli Indonesia
    int = link pembayaran untuk pembeli luar negeri
    Kosongkan ('') kalau belum ada. */
+var SHOP='https://sociabuzz.com/mimos_inc/shop'; /* link toko Sociabuzz; ganti per produk bila nanti ada link terpisah */
 var PRODUK = {
-  'wick-zone':  {judul:'Wick Zone Trading',        n:22, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-wick-zone',   id:'', int:''},
-  'bollinger':  {judul:'Bollinger Bands Basics',   n:28, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-bollinger',   id:'', int:''},
-  'candle':     {judul:'Candle Pattern Essentials',n:32, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-candle',      id:'', int:''},
-  'scalping':   {judul:'MIMOS Scalping Strategy',  n:58, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-scalping',    id:'', int:''},
-  'smc':        {judul:'SMC & Order Block',        n:64, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-smc',         id:'', int:''},
-  'elliott':    {judul:'Elliott Wave Lesson',      n:25, unit:'c', idr:'Rp 75.000',  usd:'$6.99',  cover:'ebook-elliott',     id:'', int:''},
-  'full-margin':{judul:'Trading Full Margin ala Mang Arte', n:12, unit:'p', extra:'Timeframe M1', idr:'Rp 250.000', usd:'$22.99', cover:'ebook-full-margin', id:'', int:''}
+  'wick-zone':  {judul:'Wick Zone Trading',        n:22, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-wick-zone',   id:SHOP, int:SHOP},
+  'bollinger':  {judul:'Bollinger Bands Basics',   n:28, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-bollinger',   id:SHOP, int:SHOP},
+  'candle':     {judul:'Candle Pattern Essentials',n:32, unit:'p', idr:'Rp 20.000',  usd:'$1.99',  cover:'ebook-candle',      id:SHOP, int:SHOP},
+  'scalping':   {judul:'MIMOS Scalping Strategy',  n:58, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-scalping',    id:SHOP, int:SHOP},
+  'smc':        {judul:'SMC & Order Block',        n:64, unit:'p', idr:'Rp 50.000',  usd:'$4.99',  cover:'ebook-smc',         id:SHOP, int:SHOP},
+  'elliott':    {judul:'Elliott Wave Lesson',      n:25, unit:'c', idr:'Rp 75.000',  usd:'$6.99',  cover:'ebook-elliott',     id:SHOP, int:SHOP},
+  'full-margin':{judul:'Trading Full Margin ala Mang Arte', n:12, unit:'p', extra:'Timeframe M1', idr:'Rp 20.000', usd:'$1.99', cover:'ebook-full-margin', id:SHOP, int:SHOP}
 };
 var TXT={
-  id:{cek:'Centang persetujuan dulu untuk lanjut.',na:'Pembayaran untuk produk ini belum tersedia. Hubungi mimos.universe.official@gmail.com.',go:'Mengalihkan ke Sociabuzz…',by:'oleh Mang Arte',p:'halaman',c:'bab',lang:'Bahasa Indonesia',alt:'Cover e-book ',pesan:'Pesan '},
-  en:{cek:'Please tick the agreement box to continue.',na:'Payment for this product is not available yet. Contact mimos.universe.official@gmail.com.',go:'Redirecting to Sociabuzz…',by:'by Mang Arte',p:'pages',c:'chapters',lang:'Indonesian',alt:'E-book cover: ',pesan:'Order '}
+  id:{cek:'Centang persetujuan dulu untuk lanjut.',na:'Pembayaran untuk produk ini belum tersedia. Hubungi mimos.universe.official@gmail.com.',go:'Mengalihkan ke Sociabuzz…',by:'oleh Mang Arte',p:'halaman',c:'bab',lang:'Bahasa Indonesia',alt:'Cover e-book ',pesan:'Pesan ',pick:'Di halaman Sociabuzz, pilih e-book: '},
+  en:{cek:'Please tick the agreement box to continue.',na:'Payment for this product is not available yet. Contact mimos.universe.official@gmail.com.',go:'Redirecting to Sociabuzz…',by:'by Mang Arte',p:'pages',c:'chapters',lang:'Indonesian',alt:'E-book cover: ',pesan:'Order ',pick:'On the Sociabuzz page, select the e-book: '}
 };
 var L=function(){return window.mimosLang?window.mimosLang():'id'};
 var kode=new URLSearchParams(location.search).get('p');
@@ -134,6 +136,8 @@ function render(){
   $('meta').textContent=t.by+' · '+p.n+' '+(p.unit==='c'?t.c:t.p)+(p.extra?' · '+p.extra:'')+' · '+t.lang;
   var pr=$('price'); pr.textContent=p.idr+' '; var sp=document.createElement('span'); sp.textContent='| '+p.usd; pr.appendChild(sp);
   var c=$('cover'); c.src='assets/'+p.cover+'.jpg'; c.alt=t.alt+p.judul;
+  $('pick').textContent=t.pick+p.judul;
+  $('payInt').hidden=!(p.int&&p.int!==p.id);
   $('err').textContent=''; $('status').textContent='';
 }
 function bayar(jenis){
