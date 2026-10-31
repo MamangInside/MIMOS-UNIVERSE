@@ -46,7 +46,13 @@
   'Risk warning:':'Peringatan risiko:',
   'Trading forex, gold, and other leveraged products carries a high risk of loss and is not suitable for everyone. All content, e-books, and tools are for education only and are not financial advice. Past performance does not guarantee future results.':'Trading forex, emas, dan produk berleverage lainnya berisiko tinggi dan tidak cocok untuk semua orang. Semua konten, e-book, dan alat hanya untuk edukasi dan bukan saran keuangan. Kinerja masa lalu tidak menjamin hasil di masa depan.',
   '© 2026 MIMOS Universe. All rights reserved.':'© 2026 MIMOS Universe. Hak cipta dilindungi.',
-  'Filter e-books':'Filter e-book','MIMOS Universe – silver M with eagle and wings over the earth':'MIMOS Universe – huruf M perak dengan elang dan sayap di atas bumi'
+  'Filter e-books':'Filter e-book',
+  'COMMUNITY REVIEWS':'ULASAN KOMUNITAS','Words from people who already know MIMOS.':'Kata mereka yang sudah mengenal MIMOS.',
+  'No reviews yet. Be the first to share your experience.':'Belum ada ulasan. Jadilah yang pertama membagikan pengalamanmu.',
+  'Write a review':'Tulis ulasan','Submit review':'Kirim ulasan',
+  'Reviews appear after moderation. Please don’t include personal contact details.':'Ulasan tampil setelah dimoderasi. Jangan cantumkan data kontak pribadi.',
+  'Your name':'Namamu','Rating':'Penilaian','Your review':'Ulasanmu',
+  'Share your experience with MIMOS (min. 20 characters)':'Bagikan pengalamanmu dengan MIMOS (min. 20 karakter)','MIMOS Universe – silver M with eagle and wings over the earth':'MIMOS Universe – huruf M perak dengan elang dan sayap di atas bumi'
   };
   function tr(s){
     if(Object.prototype.hasOwnProperty.call(ID,s)) return ID[s];
@@ -66,8 +72,8 @@
       if(p==='SCRIPT'||p==='STYLE'||p==='NOSCRIPT'||!n.nodeValue.trim()) continue;
       nodes.push({n:n,o:n.nodeValue});
     }
-    document.querySelectorAll('[aria-label],[alt]').forEach(function(e){
-      ['aria-label','alt'].forEach(function(a){ if(e.hasAttribute(a)) attrs.push({e:e,a:a,o:e.getAttribute(a)}); });
+    document.querySelectorAll('[aria-label],[alt],[placeholder]').forEach(function(e){
+      ['aria-label','alt','placeholder'].forEach(function(a){ if(e.hasAttribute(a)) attrs.push({e:e,a:a,o:e.getAttribute(a)}); });
     });
   }
   function apply(l){

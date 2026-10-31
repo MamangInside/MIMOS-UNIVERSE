@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id" data-title-id="Sedang Dikembangkan – MIMOS Universe" data-title-en="Under Construction – MIMOS Universe">
+<head>
+<meta charset="utf-8">
+<script src="i18n.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Under Construction – MIMOS Universe</title>
+<link rel="icon" href="assets/logo-icon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--panel:#0f0e0c;--line:#4a3a1a;--gold:#e8b84a;--gold2:#f6d98a;--text:#f2ede2;--muted:#b9b2a2;--display:'Cinzel',Georgia,serif;--body:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(232,184,74,.14),transparent 70%),var(--bg);color:var(--text);font:400 15px/1.7 var(--body);min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+header{border-bottom:1px solid var(--line);background:rgba(7,7,10,.94)}
+.bar{width:min(820px,100% - 32px);margin-inline:auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.right{display:flex;align-items:center;gap:8px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font:500 19px var(--display);letter-spacing:.12em;color:var(--gold)}
+.brand img{height:30px;width:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border:1px solid var(--gold);border-radius:8px;font:600 14px var(--body);text-decoration:none;color:var(--gold2);background:none;cursor:pointer}
+.btn:hover{background:rgba(232,184,74,.12)}
+.btn.solid{background:var(--gold);color:#1a1204}
+.btn.solid:hover{background:var(--gold2)}
+.btn.sm{padding:8px 13px;font-size:13px}
+main{flex:1;display:grid;place-items:center;padding:40px 16px}
+.box{width:min(520px,100%);text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:36px 24px}
+.ico{font-size:56px;line-height:1;margin-bottom:12px}
+h1{font:700 clamp(24px,6vw,32px)/1.2 var(--display);letter-spacing:.04em;color:var(--gold);margin-bottom:10px}
+.feat{display:inline-block;margin-bottom:14px;padding:4px 14px;border:1px solid var(--line);border-radius:999px;color:var(--gold2);font-size:13px;font-weight:600}
+p{color:var(--muted);margin-bottom:22px}
+.bars{height:6px;border-radius:99px;background:#1a1408;overflow:hidden;margin:0 auto 24px;max-width:280px}
+.bars i{display:block;height:100%;width:45%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:99px}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:16px 0;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="brand" href="index.html"><img src="assets/logo-icon.webp" alt="" width="55" height="36">MIMOS</a>
+  <div class="right"><div class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><a class="btn sm" href="index.html">&larr; <span data-l="id">Kembali</span><span data-l="en">Back</span></a></div>
+</div></header>
+<main>
+  <div class="box">
+    <div class="ico" aria-hidden="true">🚧</div>
+    <h1><span data-l="id">Sedang Dikembangkan</span><span data-l="en">Under Construction</span></h1>
+    <div class="feat" id="feat" hidden></div>
+    <p><span data-l="id">Halaman atau fitur ini masih dalam tahap pengembangan. Pantau terus MIMOS Universe, kami sedang menyiapkannya untukmu.</span><span data-l="en">This page or feature is still under development. Stay tuned to MIMOS Universe, we’re getting it ready for you.</span></p>
+    <div class="bars" aria-hidden="true"><i></i></div>
+    <div class="cta">
+      <a class="btn solid" href="index.html">&larr; <span data-l="id">Kembali ke beranda</span><span data-l="en">Back to home</span></a>
+      <a class="btn" href="https://t.me/Mamang_Arte" target="_blank" rel="noopener"><span data-l="id">Tanya lewat Telegram</span><span data-l="en">Ask on Telegram</span></a>
+    </div>
+  </div>
+</main>
+<footer>© 2026 MIMOS Universe. <span data-l="id">Hak cipta dilindungi.</span><span data-l="en">All rights reserved.</span></footer>
+<script>
+var F={
+ 'ai-trading':['MIMOS AI Trading','MIMOS AI Trading'],'studio':['MIMOS Studio','MIMOS Studio'],'aquaculture':['MIMOS AI Aquaculture','MIMOS AI Aquaculture'],
+ 'rent-ea':['Sewa EA','Rent EA'],'copy-trade':['Copy Trade','Copy Trade'],'labs':['MIMOS Labs','MIMOS Labs'],'join':['Gabung MIMOS Universe','Join MIMOS Universe'],
+ 'faq':['FAQ','FAQ'],'payment-guide':['Panduan Pembayaran','Payment Guide'],'privacy':['Kebijakan Privasi','Privacy Policy'],
+ 'youtube':['YouTube','YouTube'],'discord':['Discord','Discord'],'x':['X','X'],'instagram':['Instagram','Instagram']
+};
+var k=new URLSearchParams(location.search).get('f');
+function show(){
+  var el=document.getElementById('feat');
+  if(k&&Object.prototype.hasOwnProperty.call(F,k)){ el.textContent=F[k][(window.mimosLang&&window.mimosLang()==='en')?1:0]; el.hidden=false; }
+}
+document.addEventListener('langchange',show); show();
+</script>
+<script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -145,6 +145,26 @@ footer a:hover{color:var(--gold2)}
 .copy{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px}
 .copy em{color:var(--gold)}
 
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.rev .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+.rev p{color:var(--text);font-size:14px;margin:8px 0 10px}
+.rev .by{font-size:12px;color:var(--muted)}
+.rate{font-size:15px;color:var(--gold2);font-weight:600}
+.revform{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;max-width:640px}
+.revform h3{font:600 16px var(--body);color:var(--gold2)}
+.revform input,.revform select,.revform textarea{width:100%;background:#0a0906;border:1px solid var(--line);border-radius:8px;color:var(--text);padding:11px 12px;font:inherit;font-size:14px}
+.revform .row{display:grid;grid-template-columns:1fr 130px;gap:10px}
+.revform textarea{resize:vertical}
+.revform .btn{justify-content:center;border:0;cursor:pointer}
+.revform .hp{position:absolute!important;left:-9999px!important;opacity:0}
+.revform .msg{font-size:13px;min-height:18px;color:var(--gold2)}
+.revform small{color:var(--muted);font-size:12px}
+@media (max-width:1024px){.rev-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){.rev-grid{grid-template-columns:1fr}.revform .row{grid-template-columns:1fr}}
+
 /* RESPONSIVE */
 @media (max-width:1024px){
   .grid4{grid-template-columns:repeat(2,1fr)}
@@ -222,10 +242,10 @@ footer a:hover{color:var(--gold2)}
       <a class="more" href="#universe">Explore all projects</a>
     </div>
     <div class="grid4">
-      <a class="card" href="#"><div class="art u1"></div><div class="body"><h3>MIMOS AI TRADING</h3><span class="tag">Smarter analysis. Better decisions.</span><p>AI-powered trading solutions, expert tools, and real market strategies.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="segera.html?f=ai-trading"><div class="art u1"></div><div class="body"><h3>MIMOS AI TRADING</h3><span class="tag">Smarter analysis. Better decisions.</span><p>AI-powered trading solutions, expert tools, and real market strategies.</p><span class="go">Explore</span></div></a>
       <a class="card" href="https://makeplay.ai/u/cmsi7p2py2sd5mkgnr2fg7prt" target="_blank" rel="noopener"><div class="art u2"></div><div class="body"><h3>MIMOS GAMES</h3><span class="tag">Play. Explore. Enjoy.</span><p>Immersive games, interactive experiences, and digital entertainment.</p><span class="go">Explore</span></div></a>
-      <a class="card" href="#"><div class="art u3"></div><div class="body"><h3>MIMOS STUDIO</h3><span class="tag">Ideas become reality.</span><p>Branding, design, production, and creative services for your vision.</p><span class="go">Explore</span></div></a>
-      <a class="card" href="#"><div class="art u4"></div><div class="body"><h3>MIMOS AI AQUACULTURE</h3><span class="tag">Smart farming. Sustainable future.</span><p>AI-driven aquaculture technology for a healthier planet.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="segera.html?f=studio"><div class="art u3"></div><div class="body"><h3>MIMOS STUDIO</h3><span class="tag">Ideas become reality.</span><p>Branding, design, production, and creative services for your vision.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="segera.html?f=aquaculture"><div class="art u4"></div><div class="body"><h3>MIMOS AI AQUACULTURE</h3><span class="tag">Smart farming. Sustainable future.</span><p>AI-driven aquaculture technology for a healthier planet.</p><span class="go">Explore</span></div></a>
     </div>
   </div>
 </section>
@@ -234,7 +254,7 @@ footer a:hover{color:var(--gold2)}
   <div class="wrap">
     <div class="sec-head">
       <div><h2 class="gold">MIMOS KNOWLEDGE STORE</h2><p>E-books for smarter traders. Learn. Apply. Grow.</p></div>
-      <a class="more" href="#">View all e-books</a>
+      <a class="more" href="#store">View all e-books</a>
     </div>
     <div class="special">
       <img src="assets/ebook-full-margin.jpg" alt="Cover e-book Trading Full Margin ala Mang Arte, Timeframe M1" width="800" height="1200" loading="lazy">
@@ -269,11 +289,34 @@ footer a:hover{color:var(--gold2)}
   </div>
 </section>
 
+<section id="reviews" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2 class="gold">COMMUNITY REVIEWS</h2><p>Words from people who already know MIMOS.</p></div>
+      <div class="rate" id="rate" hidden></div>
+    </div>
+    <div class="rev-grid" id="revList"></div>
+    <p class="meta" id="revEmpty">No reviews yet. Be the first to share your experience.</p>
+    <form class="revform" id="revForm" novalidate>
+      <h3>Write a review</h3>
+      <div class="row">
+        <input id="rvName" maxlength="40" autocomplete="name" placeholder="Your name" aria-label="Your name">
+        <select id="rvRate" aria-label="Rating"><option value="5" selected>★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select>
+      </div>
+      <textarea id="rvText" maxlength="500" rows="4" placeholder="Share your experience with MIMOS (min. 20 characters)" aria-label="Your review"></textarea>
+      <input class="hp" id="rvHp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn solid" type="submit">Submit review</button>
+      <div class="msg" id="rvMsg" role="status"></div>
+      <small>Reviews appear after moderation. Please don’t include personal contact details.</small>
+    </form>
+  </div>
+</section>
+
 <section style="padding-top:0">
   <div class="wrap grid3">
-    <div class="promo" id="rent-ea"><h3>RENT EA</h3><p>Automate your trading. Professional Expert Advisors with proven strategies and backtest results.</p><a class="btn ghost" href="#">Browse EA</a></div>
-    <div class="promo" id="copy-trade"><h3>COPY TRADE</h3><p>Follow the professionals. Transparent performance, low risk, and real results.</p><a class="btn ghost" href="#">View performance</a></div>
-    <div class="promo" id="about"><h3>MIMOS LABS</h3><p>Innovation in progress. Exploring new technologies and future projects for a sustainable tomorrow.</p><a class="btn ghost" href="#">Discover Labs</a></div>
+    <div class="promo" id="rent-ea"><h3>RENT EA</h3><p>Automate your trading. Professional Expert Advisors with proven strategies and backtest results.</p><a class="btn ghost" href="segera.html?f=rent-ea">Browse EA</a></div>
+    <div class="promo" id="copy-trade"><h3>COPY TRADE</h3><p>Follow the professionals. Transparent performance, low risk, and real results.</p><a class="btn ghost" href="segera.html?f=copy-trade">View performance</a></div>
+    <div class="promo" id="about"><h3>MIMOS LABS</h3><p>Innovation in progress. Exploring new technologies and future projects for a sustainable tomorrow.</p><a class="btn ghost" href="segera.html?f=labs">Discover Labs</a></div>
   </div>
 </section>
 
@@ -284,7 +327,7 @@ footer a:hover{color:var(--gold2)}
     <div class="feat"><b>Secure Payment</b>PayPal / DANA / QRIS</div>
     <div class="feat"><b>Instant Delivery</b>E-book &amp; access</div>
     <div class="feat"><b>24/7 Support</b>We’re here for you</div>
-    <a class="btn solid" href="#">Join MIMOS Universe</a>
+    <a class="btn solid" href="segera.html?f=join">Join MIMOS Universe</a>
   </div>
 </div>
 </main>
@@ -294,9 +337,9 @@ footer a:hover{color:var(--gold2)}
     <div class="fgrid">
       <div><a class="logo" href="#home"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:34px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a><p style="margin-top:12px">ONE INTELLIGENCE. MULTIPLE WORLDS.</p></div>
       <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#universe">Universe</a></li><li><a href="#store">Store</a></li><li><a href="#store">E-Books</a></li><li><a href="#rent-ea">Rent EA</a></li><li><a href="#copy-trade">Copy Trade</a></li></ul></div>
-      <div><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Payment Guide</a></li><li><a href="syarat-layanan.html">Terms of Service</a></li><li><a href="#">Privacy Policy</a></li><li><a href="kebijakan-refund.html">Refund Policy</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="segera.html?f=faq">FAQ</a></li><li><a href="segera.html?f=payment-guide">Payment Guide</a></li><li><a href="syarat-layanan.html">Terms of Service</a></li><li><a href="segera.html?f=privacy">Privacy Policy</a></li><li><a href="kebijakan-refund.html">Refund Policy</a></li></ul></div>
       <div><h4>Payment Methods</h4><div class="pay"><span>PayPal</span><span>DANA</span><span>QRIS</span></div><p class="meta" style="margin-top:8px">(Indonesia)</p></div>
-      <div><h4>Follow Us</h4><div class="social"><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="Discord">DC</a><a href="#" aria-label="X">X</a><a href="#" aria-label="Instagram">IG</a></div></div>
+      <div><h4>Follow Us</h4><div class="social"><a href="segera.html?f=youtube" aria-label="YouTube">YT</a><a href="https://t.me/Mamang_Arte" target="_blank" rel="noopener" aria-label="Telegram">TG</a><a href="segera.html?f=discord" aria-label="Discord">DC</a><a href="segera.html?f=x" aria-label="X">X</a><a href="segera.html?f=instagram" aria-label="Instagram">IG</a></div></div>
     </div>
     <p class="risk"><b>Risk warning:</b> Trading forex, gold, and other leveraged products carries a high risk of loss and is not suitable for everyone. All content, e-books, and tools are for education only and are not financial advice. Past performance does not guarantee future results.</p>
     <div class="copy"><span>© 2026 MIMOS Universe. All rights reserved.</span><em>Maximizing the Minimize.</em></div>
@@ -316,6 +359,63 @@ chips.forEach(c=>c.addEventListener('click',()=>{
   books.forEach(b=>{const show=f==='all'||b.dataset.c.split(' ').includes(f);b.hidden=!show;if(show)n++});
   empty.hidden=n>0;
 }));
+</script>
+<script>
+/* ===== Ulasan: isi Supabase (opsional) lalu ulasan tampil dari database. Kosong = pakai reviews.json ===== */
+var REVIEWS_CFG={url:'',key:''};
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var LG=function(){return window.mimosLang?window.mimosLang():'en'};
+  var T={
+    id:{short:'Isi nama dan ulasan minimal 20 karakter.',thanks:'Terima kasih! Ulasanmu akan tampil setelah ditinjau.',fail:'Gagal mengirim. Coba lagi nanti.',wait:'Tunggu sebentar sebelum mengirim lagi.',mail:'Aplikasi email dibuka. Kirim emailnya agar ulasanmu kami terima.',rv:'ulasan',loc:'id-ID'},
+    en:{short:'Please enter your name and a review of at least 20 characters.',thanks:'Thank you! Your review will appear after moderation.',fail:'Could not submit. Please try again later.',wait:'Please wait a moment before submitting again.',mail:'Your email app opened. Send the email so we receive your review.',rv:'reviews',loc:'en-US'}
+  };
+  var data=[];
+  function stars(n){return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,5-n);}
+  function render(){
+    var t=T[LG()], list=$('revList'); list.textContent='';
+    data.forEach(function(r){
+      var d=document.createElement('div'); d.className='rev';
+      var s=document.createElement('div'); s.className='stars'; s.textContent=stars(r.rating);
+      var p=document.createElement('p'); p.textContent=r.text;
+      var b=document.createElement('div'); b.className='by';
+      var dt=new Date(r.date||r.created_at), ds=isNaN(dt)?'':' · '+dt.toLocaleDateString(t.loc,{year:'numeric',month:'short',day:'numeric'});
+      b.textContent=r.name+ds;
+      d.appendChild(s); d.appendChild(p); d.appendChild(b); list.appendChild(d);
+    });
+    $('revEmpty').hidden=data.length>0;
+    var rt=$('rate');
+    if(data.length){ var avg=data.reduce(function(a,r){return a+r.rating},0)/data.length; rt.textContent='★ '+avg.toFixed(1)+' · '+data.length+' '+t.rv; rt.hidden=false; } else { rt.hidden=true; }
+  }
+  function clean(a){return (Array.isArray(a)?a:[]).filter(function(r){return r&&typeof r.name==='string'&&typeof r.text==='string'&&r.rating>=1&&r.rating<=5;}).map(function(r){return {name:r.name.slice(0,40),text:r.text.slice(0,500),rating:Math.round(r.rating),date:r.date,created_at:r.created_at};});}
+  function load(){
+    var u=REVIEWS_CFG.url, k=REVIEWS_CFG.key, req;
+    if(u&&k) req=fetch(u+'/rest/v1/reviews?select=name,rating,text,created_at&approved=eq.true&order=created_at.desc&limit=12',{headers:{apikey:k,Authorization:'Bearer '+k}});
+    else req=fetch('reviews.json',{cache:'no-cache'});
+    req.then(function(r){return r.ok?r.json():[]}).catch(function(){return []}).then(function(a){data=clean(a);render();});
+  }
+  $('revForm').addEventListener('submit',function(e){
+    e.preventDefault(); var t=T[LG()], msg=$('rvMsg'); msg.textContent='';
+    if($('rvHp').value) return;
+    var name=$('rvName').value.trim(), text=$('rvText').value.trim(), rating=parseInt($('rvRate').value,10);
+    if(name.length<2||text.length<20){ msg.textContent=t.short; return; }
+    try{ if(Date.now()-(+localStorage.getItem('mimos-rv')||0)<60000){ msg.textContent=t.wait; return; } }catch(_){}
+    function done(){ try{localStorage.setItem('mimos-rv',String(Date.now()));}catch(_){} }
+    try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:'klik/Kirim ulasan',title:'Kirim ulasan',event:true}); }catch(_){}
+    var u=REVIEWS_CFG.url, k=REVIEWS_CFG.key;
+    if(u&&k){
+      fetch(u+'/rest/v1/reviews',{method:'POST',headers:{apikey:k,Authorization:'Bearer '+k,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({name:name,rating:rating,text:text})})
+        .then(function(r){ if(!r.ok) throw 0; $('revForm').reset(); done(); msg.textContent=t.thanks; })
+        .catch(function(){ msg.textContent=t.fail; });
+    } else {
+      var body='Nama: '+name+'\nRating: '+rating+'/5\n\n'+text;
+      done(); msg.textContent=t.mail;
+      location.href='mailto:mimos.universe.official@gmail.com?subject='+encodeURIComponent('Ulasan MIMOS Universe')+'&body='+encodeURIComponent(body);
+    }
+  });
+  document.addEventListener('langchange',render);
+  load();
+})();
 </script>
 <script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
