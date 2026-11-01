@@ -42,7 +42,7 @@
   'START YOUR':'MULAI','JOURNEY TODAY':'PERJALANANMU HARI INI','Learn. Trade. Grow. Be part of MIMOS Universe.':'Belajar. Trading. Berkembang. Jadilah bagian dari MIMOS Universe.',
   'Global Access':'Akses Global','International & local':'Internasional & lokal','Secure Payment':'Pembayaran Aman','Instant Delivery':'Pengiriman Instan','E-book & access':'E-book & akses','24/7 Support':'Dukungan 24/7','We’re here for you':'Kami siap membantu',
   'Join the Community':'Gabung Komunitas','ONE INTELLIGENCE. MULTIPLE WORLDS.':'SATU KECERDASAN. BANYAK DUNIA.',
-  'Quick Links':'Tautan Cepat','Store':'Toko','Support':'Dukungan','Payment Guide':'Panduan Pembayaran','Terms of Service':'Syarat Layanan','Privacy Policy':'Kebijakan Privasi','Refund Policy':'Kebijakan Refund','Payment Methods':'Metode Pembayaran','Follow Us':'Ikuti Kami',
+  'Quick Links':'Tautan Cepat','Store':'Toko','Support':'Dukungan','Payment Guide':'Panduan Pembayaran','Terms of Service':'Syarat Layanan','Privacy Policy':'Kebijakan Privasi','Refund Policy':'Kebijakan Refund','EA Rental Terms':'Syarat Sewa EA','Payment Methods':'Metode Pembayaran','Follow Us':'Ikuti Kami',
   'Risk warning:':'Peringatan risiko:',
   'Trading forex, gold, and other leveraged products carries a high risk of loss and is not suitable for everyone. All content, e-books, and tools are for education only and are not financial advice. Past performance does not guarantee future results.':'Trading forex, emas, dan produk berleverage lainnya berisiko tinggi dan tidak cocok untuk semua orang. Semua konten, e-book, dan alat hanya untuk edukasi dan bukan saran keuangan. Kinerja masa lalu tidak menjamin hasil di masa depan.',
   '© 2026 MIMOS Universe. All rights reserved.':'© 2026 MIMOS Universe. Hak cipta dilindungi.',
@@ -57,7 +57,7 @@
   'No reviews yet. Be the first to share your experience.':'Belum ada ulasan. Jadilah yang pertama membagikan pengalamanmu.',
   'Write a review':'Tulis ulasan','Submit review':'Kirim ulasan',
   'Reviews appear after moderation. Please don’t include personal contact details.':'Ulasan tampil setelah dimoderasi. Jangan cantumkan data kontak pribadi.',
-  'Your name':'Namamu','Rating':'Penilaian','Your review':'Ulasanmu',
+  'Reviews reflect personal experiences. Trading results differ for everyone and are not guaranteed.':'Ulasan mencerminkan pengalaman pribadi. Hasil trading setiap orang berbeda dan tidak dijamin.','Your name':'Namamu','Rating':'Penilaian','Your review':'Ulasanmu',
   'Share your experience with MIMOS (min. 20 characters)':'Bagikan pengalamanmu dengan MIMOS (min. 20 karakter)','MIMOS Universe – silver M with eagle and wings over the earth':'MIMOS Universe – huruf M perak dengan elang dan sayap di atas bumi'
   };
   function tr(s){
