@@ -50,6 +50,7 @@
   'Our Expert Advisors are in forward testing. Join the community to hear first when they launch.':'Expert Advisor kami sedang dalam forward test. Gabung komunitas untuk jadi yang pertama tahu saat diluncurkan.',
   'Copy trade is being prepared and has not launched yet. Join the community for updates.':'Copy trade sedang disiapkan dan belum diluncurkan. Gabung komunitas untuk kabar terbaru.',
   'Get updates':'Dapatkan kabar',
+  'Choose a rental package for the MIMOS Expert Advisor. Pay with QRIS and get your license after verification.':'Pilih paket sewa untuk Expert Advisor MIMOS. Bayar dengan QRIS dan terima lisensimu setelah diverifikasi.',
   'TRADING CLASS':'KELAS TRADING','Learn step by step with Mang Arte in a guided trading class.':'Belajar bertahap bersama Mang Arte lewat kelas trading terpandu.','Register for Trading Class':'Daftar Kelas Trading',
   'TRADING SIGNALS':'SINYAL TRADING','Get trading signals and market updates from MIMOS.':'Dapatkan sinyal trading dan update pasar dari MIMOS.','Get Trading Signals':'Dapatkan Sinyal Trading','COMING SOON':'SEGERA HADIR',
   'COMMUNITY REVIEWS':'ULASAN KOMUNITAS','Words from people who already know MIMOS.':'Kata mereka yang sudah mengenal MIMOS.',

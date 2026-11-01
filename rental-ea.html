@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id" data-title-id="Sewa EA – MIMOS Universe" data-title-en="EA Rental – MIMOS Universe">
+<head>
+<meta charset="utf-8">
+<script src="i18n.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sewa EA – MIMOS Universe</title>
+<link rel="icon" href="assets/logo-icon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--panel:#0f0e0c;--line:#4a3a1a;--gold:#e8b84a;--gold2:#f6d98a;--text:#f2ede2;--muted:#b9b2a2;--danger:#f09595;--ok:#7bd88f;--display:'Cinzel',Georgia,serif;--body:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:400 15px/1.65 var(--body)}
+a{color:var(--gold2)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+header{position:sticky;top:0;z-index:5;background:rgba(7,7,10,.94);border-bottom:1px solid var(--line)}
+.bar{width:min(640px,100% - 32px);margin-inline:auto;height:60px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.right{display:flex;align-items:center;gap:8px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;font:500 19px var(--display);letter-spacing:.12em;color:var(--gold)}
+.brand img{height:30px;width:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 18px;border:1px solid var(--gold);border-radius:10px;font:600 14px var(--body);text-decoration:none;color:var(--gold2);background:none;cursor:pointer;width:100%}
+.btn:hover{background:rgba(232,184,74,.12)}
+.btn.solid{background:var(--gold);color:#1a1204}
+.btn.solid:hover{background:var(--gold2)}
+.btn.sm{width:auto;padding:8px 13px;font-size:13px}
+main{width:min(640px,100% - 32px);margin:26px auto 56px}
+h1{font:700 clamp(24px,5vw,32px)/1.15 var(--display);letter-spacing:.04em;color:var(--gold);margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+.steps{display:flex;gap:8px;font-size:12px;color:var(--muted);margin-bottom:18px;flex-wrap:wrap}
+.steps .on{color:var(--gold2);font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.card h2{font:600 16px var(--body);color:var(--gold2);margin-bottom:10px}
+.ea{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--muted)}
+.ea b{color:var(--text);font-weight:600;word-break:break-all}
+.pk{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer}
+.pk:has(input:checked){border-color:var(--gold);background:#1a1408}
+.pk input{accent-color:var(--gold);width:18px;height:18px;flex:none}
+.pk .t{flex:1;min-width:0}
+.pk .t b{display:block;font-size:15px}
+.pk .t span{font-size:12px;color:var(--muted)}
+.pk strong{font-size:15px;white-space:nowrap}
+label.f{display:block;font-size:13px;color:var(--gold2);font-weight:600;margin-bottom:6px}
+input.txt{width:100%;background:#0a0906;border:1px solid var(--line);border-radius:8px;color:var(--text);padding:12px;font:inherit;font-size:16px;letter-spacing:.04em}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.agree{display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.55;cursor:pointer}
+.agree input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--gold)}
+.err{min-height:20px;font-size:13px;color:var(--danger);margin:8px 0}
+.risk{font-size:12px;color:var(--muted);margin-top:8px}
+.qr{background:#fff;border-radius:12px;padding:6px;max-width:340px;margin:0 auto 14px}
+.qr img{display:block;width:100%;height:auto;border-radius:8px}
+.amt{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.amt strong{font-size:22px;color:var(--gold2)}
+.amt button{background:none;border:1px solid var(--line);color:var(--gold2);border-radius:8px;padding:6px 10px;font:600 12px var(--body);cursor:pointer}
+ol{margin:0 0 14px 20px;font-size:14px}
+ol li{margin-bottom:6px}
+.stack{display:grid;gap:10px}
+.rc{display:grid;gap:0}
+.rc div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.rc div:last-child{border-bottom:0}
+.rc span{color:var(--muted)}
+.rc b{text-align:right;word-break:break-all}
+.chip{display:inline-block;padding:2px 10px;border:1px solid var(--gold);border-radius:99px;color:var(--gold2);font-size:12px;font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:12px 0}
+.ok{font-size:12px;color:var(--ok);min-height:16px;text-align:center}
+footer{border-top:1px solid var(--line);padding:16px 0;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="brand" href="index.html"><img src="assets/logo-icon.webp" alt="" width="55" height="36">MIMOS</a>
+  <div class="right"><div class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><a class="btn sm" href="index.html">&larr; <span data-k="home"></span></a></div>
+</div></header>
+
+<main>
+<h1 data-k="title"></h1>
+<p class="sub" data-k="sub"></p>
+<div class="steps"><span id="st1" data-k="s1"></span><span>›</span><span id="st2" data-k="s2"></span><span>›</span><span id="st3" data-k="s3"></span></div>
+
+<!-- LANGKAH 1 -->
+<section id="s1">
+  <div class="card ea"><span data-k="ea"></span><b id="eaName"></b></div>
+  <div class="card">
+    <h2 data-k="pkTitle"></h2>
+    <div id="pkList"></div>
+  </div>
+  <div class="card">
+    <label class="f" for="acc" data-k="accLabel"></label>
+    <input class="txt" id="acc" inputmode="numeric" autocomplete="off" maxlength="12">
+    <p class="hint" data-k="accHint"></p>
+  </div>
+  <div class="card">
+    <label class="agree"><input type="checkbox" id="ack"><span data-k="ack"></span></label>
+    <p class="risk" data-k="risk"></p>
+    <div class="err" id="err1" role="alert"></div>
+    <button class="btn solid" id="toPay" type="button" data-k="next"></button>
+  </div>
+</section>
+
+<!-- LANGKAH 2 -->
+<section id="s2" hidden>
+  <div class="card">
+    <h2 data-k="payTitle"></h2>
+    <p class="note" style="margin-top:0" data-k="paySub"></p>
+    <div class="qr"><img src="assets/qris.jpg" alt="QRIS MIMOS" width="720" height="1009"></div>
+    <div class="amt"><div><div class="hint" style="margin:0" data-k="amount"></div><strong id="payAmt"></strong></div><button id="copyAmt" type="button" data-k="copyAmt"></button></div>
+    <ol id="payHow"></ol>
+    <div class="stack">
+      <button class="btn solid" id="paid" type="button" data-k="paid"></button>
+      <button class="btn" id="back1" type="button" data-k="back"></button>
+    </div>
+    <p class="note" data-k="intl"></p>
+    <div class="ok" id="ok2" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- LANGKAH 3 -->
+<section id="s3" hidden>
+  <div class="card">
+    <h2 data-k="rcTitle"></h2>
+    <div class="rc" id="rc"></div>
+    <p class="note" data-k="rcNote"></p>
+    <div class="stack">
+      <a class="btn solid" id="tgBtn" target="_blank" rel="noopener" href="https://t.me/Mamang_Arte"></a>
+      <button class="btn" id="copyMsg" type="button" data-k="copyMsg"></button>
+      <button class="btn" id="newOrder" type="button" data-k="newOrder"></button>
+    </div>
+    <div class="ok" id="ok3" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+<footer>© 2026 MIMOS Universe</footer>
+
+<script>
+/* ================= PENGATURAN (ubah di sini) ================= */
+var EA_NAME='MIMOS_HA_3CANDLE_REVERSAL_Build03';
+var TELEGRAM='Mamang_Arte';
+var PAKET=[
+  {id:'t7',  days:7,   idr:88000,   id_:'Trial 7 hari',      en_:'7-day trial'},
+  {id:'r30', days:30,  idr:288000,  id_:'Rental 30 hari',    en_:'30-day rental'},
+  {id:'r90', days:90,  idr:688000,  id_:'Rental 90 hari',    en_:'90-day rental'},
+  {id:'r180',days:180, idr:1188888, id_:'Rental 180 hari',   en_:'180-day rental'},
+  {id:'r365',days:365, idr:1888888, id_:'Rental 1 tahun',    en_:'1-year rental'},
+  {id:'life',days:0,   idr:8888888, id_:'Lifetime',          en_:'Lifetime'}
+];
+/* ============================================================== */
+var TX={
+ id:{home:'Kembali',title:'Sewa EA MIMOS',sub:'Pilih paket, isi nomor akun MT5, lalu bayar dengan QRIS.',s1:'1. Paket & akun',s2:'2. Pembayaran',s3:'3. Konfirmasi',ea:'Produk EA',
+  pkTitle:'Pilih paket',accLabel:'Nomor akun MT5',accHint:'Lisensi berlaku untuk satu nomor akun MT5 ini. Pastikan sudah benar.',accPh:'Contoh: 12345678',
+  ack:'Saya mengerti lisensi terikat pada nomor akun MT5 di atas, serta trading dan EA berisiko tinggi tanpa jaminan profit.',
+  risk:'Hasil backtest, forward test, dan performa masa lalu tidak menjamin hasil di masa depan.',next:'Lanjut ke pembayaran',
+  ePkg:'Pilih paket dulu.',eAcc:'Nomor akun MT5 harus berupa angka (5–12 digit).',eAck:'Centang persetujuan dulu untuk lanjut.',
+  payTitle:'Bayar dengan QRIS',paySub:'Scan QRIS di bawah memakai e-wallet atau m-banking.',amount:'Nominal bayar',copyAmt:'Salin nominal',copied:'Tersalin',
+  how:['Buka e-wallet atau m-banking, lalu scan QRIS.','Masukkan nominal persis sesuai paket.','Simpan screenshot bukti pembayaran, lalu tekan tombol di bawah.'],
+  paid:'Saya sudah bayar',back:'Kembali',intl:'Pembayaran saat ini hanya lewat QRIS (Indonesia). Pembeli luar negeri, hubungi Telegram @'+TELEGRAM+'.',
+  rcTitle:'Bukti pesanan',oid:'ID pesanan',date:'Tanggal',pkg:'Paket',acc:'Nomor akun MT5',amt:'Nominal',status:'Status',statusV:'Menunggu verifikasi',ea2:'EA',
+  rcNote:'Langkah terakhir: kirim konfirmasi ke Telegram beserta screenshot bukti pembayaran. Lisensi dikirim setelah pembayaran diverifikasi.',
+  tg:'Konfirmasi via Telegram @'+TELEGRAM,copyMsg:'Salin pesan konfirmasi',msgCopied:'Pesan tersalin',newOrder:'Buat pesanan baru',loc:'id-ID',
+  msg:function(o){return 'Halo Mang Arte, saya sudah membayar sewa EA MIMOS.\n\nID pesanan: '+o.oid+'\nEA: '+EA_NAME+'\nPaket: '+o.pk+'\nNominal: '+o.amt+'\nNomor akun MT5: '+o.acc+'\n\nMohon diverifikasi dan dikirimkan lisensinya. Bukti pembayaran saya lampirkan.';}},
+ en:{home:'Back',title:'MIMOS EA Rental',sub:'Choose a package, enter your MT5 account number, then pay with QRIS.',s1:'1. Package & account',s2:'2. Payment',s3:'3. Confirmation',ea:'EA product',
+  pkTitle:'Choose a package',accLabel:'MT5 account number',accHint:'The license is valid for this single MT5 account number. Please double-check it.',accPh:'Example: 12345678',
+  ack:'I understand the license is tied to the MT5 account number above, and that trading and EAs carry high risk with no guarantee of profit.',
+  risk:'Backtest results, forward test results, and past performance do not guarantee future results.',next:'Continue to payment',
+  ePkg:'Please choose a package first.',eAcc:'The MT5 account number must be digits only (5–12 digits).',eAck:'Please tick the agreement box to continue.',
+  payTitle:'Pay with QRIS',paySub:'Scan the QRIS below with your e-wallet or mobile banking app.',amount:'Amount to pay',copyAmt:'Copy amount',copied:'Copied',
+  how:['Open your e-wallet or mobile banking app and scan the QRIS.','Enter the exact amount for your package.','Save a screenshot of the payment proof, then tap the button below.'],
+  paid:'I have paid',back:'Back',intl:'Payment is currently by QRIS only (Indonesia). International buyers, please contact Telegram @'+TELEGRAM+'.',
+  rcTitle:'Order receipt',oid:'Order ID',date:'Date',pkg:'Package',acc:'MT5 account number',amt:'Amount',status:'Status',statusV:'Awaiting verification',ea2:'EA',
+  rcNote:'Final step: send your confirmation on Telegram together with a screenshot of the payment proof. The license is sent after the payment is verified.',
+  tg:'Confirm via Telegram @'+TELEGRAM,copyMsg:'Copy confirmation message',msgCopied:'Message copied',newOrder:'Start a new order',loc:'en-US',
+  msg:function(o){return 'Hello Mang Arte, I have paid for the MIMOS EA rental.\n\nOrder ID: '+o.oid+'\nEA: '+EA_NAME+'\nPackage: '+o.pk+'\nAmount: '+o.amt+'\nMT5 account number: '+o.acc+'\n\nPlease verify and send my license. I am attaching my payment proof.';}}
+};
+var $=function(i){return document.getElementById(i)};
+var LG=function(){return (window.mimosLang&&window.mimosLang()==='en')?'en':'id'};
+var rp=function(n){return 'Rp'+n.toLocaleString('id-ID')};
+var order=null, step=1;
+try{ var sv=sessionStorage.getItem('mimos-ea-order'); if(sv){ order=JSON.parse(sv); step=3; } }catch(_){}
+function count(n){ try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:'klik/'+n,title:n,event:true}); }catch(_){} }
+function pk(id){ return PAKET.filter(function(p){return p.id===id})[0]; }
+function pkName(p){ return LG()==='en'?p.en_:p.id_; }
+function pkDesc(p){ var t=LG(); return p.days? (t==='en'?'Full EA access for '+p.days+' days':'Akses penuh EA selama '+p.days+' hari') : (t==='en'?'Full EA access, no expiry':'Akses penuh EA tanpa batas waktu'); }
+function msgOf(){ var t=TX[LG()], p=pk(order.pk); return t.msg({oid:order.oid,pk:pkName(p),amt:rp(p.idr),acc:order.acc}); }
+
+function renderList(){
+  var sel=document.querySelector('input[name=pk]:checked'), cur=sel?sel.value:null, box=$('pkList'); box.textContent='';
+  PAKET.forEach(function(p){
+    var l=document.createElement('label'); l.className='pk';
+    var r=document.createElement('input'); r.type='radio'; r.name='pk'; r.value=p.id; if(p.id===cur) r.checked=true;
+    var t=document.createElement('div'); t.className='t'; var b=document.createElement('b'); b.textContent=pkName(p); var s=document.createElement('span'); s.textContent=pkDesc(p); t.appendChild(b); t.appendChild(s);
+    var st=document.createElement('strong'); st.textContent=rp(p.idr);
+    l.appendChild(r); l.appendChild(t); l.appendChild(st); box.appendChild(l);
+  });
+}
+function renderReceipt(){
+  if(!order) return; var t=TX[LG()], p=pk(order.pk), rc=$('rc'); rc.textContent='';
+  [[t.oid,order.oid],[t.date,new Date(order.ts).toLocaleString(t.loc,{dateStyle:'medium',timeStyle:'short'})],[t.ea2,EA_NAME],[t.pkg,pkName(p)],[t.acc,order.acc],[t.amt,rp(p.idr)]].forEach(function(x){
+    var d=document.createElement('div'); var a=document.createElement('span'); a.textContent=x[0]; var b=document.createElement('b'); b.textContent=x[1]; d.appendChild(a); d.appendChild(b); rc.appendChild(d);
+  });
+  var d=document.createElement('div'), a=document.createElement('span'), b=document.createElement('b'), c=document.createElement('span'); a.textContent=t.status; c.className='chip'; c.textContent=t.statusV; b.appendChild(c); d.appendChild(a); d.appendChild(b); rc.appendChild(d);
+  $('tgBtn').textContent=t.tg; $('tgBtn').href='https://t.me/'+TELEGRAM+'?text='+encodeURIComponent(msgOf());
+}
+function show(n){
+  step=n; ['s1','s2','s3'].forEach(function(id,i){ $(id).hidden=(i+1!==n); });
+  ['st1','st2','st3'].forEach(function(id,i){ $(id).className=(i+1===n)?'on':''; });
+  window.scrollTo(0,0);
+}
+function render(){
+  var t=TX[LG()];
+  document.querySelectorAll('[data-k]').forEach(function(e){ var v=t[e.getAttribute('data-k')]; if(typeof v==='string') e.textContent=v; });
+  $('acc').placeholder=t.accPh; $('eaName').textContent=EA_NAME;
+  var ol=$('payHow'); ol.textContent=''; t.how.forEach(function(h){ var li=document.createElement('li'); li.textContent=h; ol.appendChild(li); });
+  renderList(); $('err1').textContent=''; $('ok2').textContent=''; $('ok3').textContent='';
+  if(order){ $('payAmt').textContent=rp(pk(order.pk).idr); renderReceipt(); }
+}
+function copy(txt,okEl,key){ var t=TX[LG()], done=function(){ $(okEl).textContent=t[key]; }; try{ navigator.clipboard.writeText(txt).then(done,done); }catch(_){ done(); } }
+
+$('toPay').addEventListener('click',function(){
+  var t=TX[LG()], sel=document.querySelector('input[name=pk]:checked'), acc=$('acc').value.replace(/\s/g,'');
+  if(!sel){ $('err1').textContent=t.ePkg; return; }
+  if(!/^\d{5,12}$/.test(acc)){ $('err1').textContent=t.eAcc; return; }
+  if(!$('ack').checked){ $('err1').textContent=t.eAck; return; }
+  var d=new Date(), rnd=Math.random().toString(36).slice(2,6).toUpperCase();
+  order={pk:sel.value,acc:acc,ts:d.getTime(),oid:'MIMOS-'+String(d.getFullYear()).slice(2)+('0'+(d.getMonth()+1)).slice(-2)+('0'+d.getDate()).slice(-2)+'-'+rnd};
+  count('EA pilih paket: '+sel.value); $('err1').textContent=''; $('payAmt').textContent=rp(pk(sel.value).idr); show(2);
+});
+$('back1').addEventListener('click',function(){ show(1); });
+$('copyAmt').addEventListener('click',function(){ copy(String(pk(order.pk).idr),'ok2','copied'); });
+$('paid').addEventListener('click',function(){
+  try{ sessionStorage.setItem('mimos-ea-order',JSON.stringify(order)); }catch(_){}
+  count('EA sudah bayar: '+order.pk); renderReceipt(); show(3);
+});
+$('tgBtn').addEventListener('click',function(){ count('EA konfirmasi Telegram: '+order.pk); });
+$('copyMsg').addEventListener('click',function(){ copy(msgOf(),'ok3','msgCopied'); });
+$('newOrder').addEventListener('click',function(){
+  try{ sessionStorage.removeItem('mimos-ea-order'); }catch(_){} order=null; $('acc').value=''; $('ack').checked=false;
+  document.querySelectorAll('input[name=pk]').forEach(function(r){ r.checked=false; }); render(); show(1);
+});
+document.addEventListener('langchange',function(){ render(); });
+render(); show(order?3:1);
+</script>
+<script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
