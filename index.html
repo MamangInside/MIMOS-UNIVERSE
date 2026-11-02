@@ -183,6 +183,12 @@ footer a:hover{color:var(--gold2)}
 .promo-bar .code:hover{background:rgba(232,184,74,.15)}
 .promo-bar .copied{display:block;min-height:16px;margin-top:6px;color:var(--gold2);font-size:12px}
 
+/* TOPBAR PROMO */
+.topbar{background:linear-gradient(90deg,#8a6414,#e8b84a,#8a6414);color:#1a1204;font:600 13px/1.45 var(--body);text-align:center;padding:9px 42px 9px 14px;position:relative}
+.topbar a{color:inherit;text-decoration:none}
+.topbar b{text-decoration:underline}
+.topbar .x{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:22px;line-height:1;cursor:pointer;color:#1a1204;padding:4px 8px}
+
 /* RESPONSIVE */
 @media (max-width:760px){.nav{gap:8px}.logo{font-size:17px;letter-spacing:.08em;min-width:0}.logo img{height:28px!important}.logo small{letter-spacing:.3em}.menu{padding:6px 10px;font-size:13px}.langsw button{padding:6px 9px}}
 
@@ -215,6 +221,11 @@ footer a:hover{color:var(--gold2)}
 </head>
 <body>
 
+<div class="topbar" id="topbar">
+  <a href="ebook.html"><span data-l="en">🎁 Introductory promotion: up to 75% off all e-books until Dec 31, 2026. <b>See e-books</b></span><span data-l="id">🎁 Promo perkenalan: diskon sampai 75% untuk semua e-book hingga 31 Des 2026. <b>Lihat e-book</b></span></a>
+  <button class="x" id="topbarX" type="button" aria-label="Close">&times;</button>
+</div>
+
 <header>
   <div class="wrap nav">
     <a class="logo" href="#home" aria-label="MIMOS Universe"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:36px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a>
@@ -222,7 +233,7 @@ footer a:hover{color:var(--gold2)}
     <nav id="nav">
       <a class="on" href="#home">Home</a>
       <a href="#universe">Universe</a>
-      <a href="#store">E-Books</a>
+      <a href="ebook.html">E-Books</a>
       <a href="rental-ea.html">Rent EA</a>
       <a href="#copy-trade">Copy Trade</a>
       <a href="#about">About</a>
@@ -242,7 +253,7 @@ footer a:hover{color:var(--gold2)}
       <p>We build intelligent systems, digital experiences, and real-world solutions for a smarter and more prosperous future.</p>
       <div class="cta">
         <a class="btn solid" href="#universe">Explore Universe</a>
-        <a class="btn ghost" href="#store">Explore Store</a>
+        <a class="btn ghost" href="ebook.html">Explore Store</a>
       </div>
     </div>
     <div class="emblem">
@@ -270,53 +281,10 @@ footer a:hover{color:var(--gold2)}
   </div>
 </section>
 
-<section id="store" style="border-top:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><h2 class="gold">MIMOS KNOWLEDGE STORE</h2><p>E-books for smarter traders. Learn. Apply. Grow.</p></div>
-      <a class="more" href="#store">View all e-books</a>
-    </div>
-    <div class="promo-bar" role="note">
-      <p data-l="en">🎁 <b>Introductory promotion:</b> use code <button class="code" type="button" data-code="001100">001100</button> (75% off) or <button class="code" type="button" data-code="110011">110011</button> (65% off) at Sociabuzz checkout. All e-books. Valid until Dec 31, 2026.</p>
-      <p data-l="id">🎁 <b>Promo perkenalan:</b> pakai kode <button class="code" type="button" data-code="001100">001100</button> (diskon 75%) atau <button class="code" type="button" data-code="110011">110011</button> (diskon 65%) saat checkout di Sociabuzz. Semua e-book. Berlaku sampai 31 Des 2026.</p>
-      <small class="copied" aria-live="polite"></small>
-    </div>
-    <div class="special">
-      <img src="assets/ebook-full-margin.jpg" alt="Cover e-book Trading Full Margin ala Mang Arte, Timeframe M1" width="800" height="1200" loading="lazy">
-      <div>
-        <span class="badge">SPECIAL EDITION</span>
-        <h3 class="gold">Trading Full Margin ala Mang Arte</h3>
-        <span class="meta">by Mang Arte · 12 pages · Timeframe M1 · XAUUSD</span>
-        <p>Scalping strategy for XAUUSD on the M1 timeframe: plan, entry, SL/TP, execute, repeat. A guide from the basics to real case studies, complete with risk management.</p>
-        <div class="price">Rp 20.000 <span>| $1.99</span></div>
-        <div class="warn">⚠ High speed, high risk. Educational content, not financial advice.</div>
-        <a class="btn solid" href="pesan.html?p=full-margin">Buy Now</a>
-      </div>
-    </div>
-    <div class="chips" role="group" aria-label="Filter e-books">
-      <button class="chip" data-f="all" aria-pressed="true">All</button>
-      <button class="chip" data-f="strategy" aria-pressed="false">Trading Strategy</button>
-      <button class="chip" data-f="technical" aria-pressed="false">Technical Analysis</button>
-      <button class="chip" data-f="smc" aria-pressed="false">SMC &amp; Order Block</button>
-      <button class="chip" data-f="elliott" aria-pressed="false">Elliott Wave</button>
-      <button class="chip" data-f="pattern" aria-pressed="false">Chart Pattern</button>
-      <button class="chip" data-f="beginner" aria-pressed="false">Beginner</button>
-    </div>
-    <div class="grid5" id="books">
-      <article class="card book" data-c="technical pattern beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-wick-zone.jpg" alt="Cover e-book Wick Zone Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Wick Zone Trading</h3><span class="meta">by Mang Arte · 22 pages · Indonesian</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="pesan.html?p=wick-zone">Buy Now</a></div></article>
-      <article class="card book" data-c="technical beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-bollinger.jpg" alt="Cover e-book Bollinger Band Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Bollinger Bands Basics</h3><span class="meta">by Mang Arte · 28 pages · Indonesian</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="pesan.html?p=bollinger">Buy Now</a></div></article>
-      <article class="card book" data-c="pattern beginner"><span class="badge">STARTER</span><img class="cover" src="assets/ebook-candle.jpg" alt="Cover e-book Candle Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Candle Pattern Essentials</h3><span class="meta">by Mang Arte · 32 pages · Indonesian</span><div class="price">Rp 20.000 <span>| $1.99</span></div><a class="btn ghost" href="pesan.html?p=candle">Buy Now</a></div></article>
-      <article class="card book" data-c="strategy"><span class="badge">STANDARD</span><img class="cover" src="assets/ebook-scalping.jpg" alt="Cover e-book Scalping Strategy Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>MIMOS Scalping Strategy</h3><span class="meta">by Mang Arte · 58 pages · Indonesian</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="pesan.html?p=scalping">Buy Now</a></div></article>
-      <article class="card book" data-c="smc strategy"><span class="badge">STANDARD</span><img class="cover" src="assets/ebook-smc.jpg" alt="Cover e-book Smart Money Concept Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>SMC &amp; Order Block</h3><span class="meta">by Mang Arte · 64 pages · Indonesian</span><div class="price">Rp 50.000 <span>| $4.99</span></div><a class="btn ghost" href="pesan.html?p=smc">Buy Now</a></div></article>
-      <article class="card book" data-c="elliott technical"><span class="badge">PREMIUM</span><img class="cover" src="assets/ebook-elliott.jpg" alt="Cover e-book Elliott Wave Lesson by Mang Arte" width="370" height="500" loading="lazy"><div class="body"><h3>Elliott Wave Lesson</h3><span class="meta">by Mang Arte · 25 chapters · Indonesian</span><div class="price">Rp 75.000 <span>| $6.99</span></div><a class="btn ghost" href="pesan.html?p=elliott">Buy Now</a></div></article>
-    </div>
-    <p id="empty" class="meta" hidden style="margin-top:12px">No e-books in this category yet.</p>
-  </div>
-</section>
-
 <section id="services" style="border-top:1px solid var(--line)">
   <div class="wrap grid3">
     <div class="promo" id="rent-ea"><h3>RENT EA</h3><p>Choose a rental package for the MIMOS Expert Advisor. Pay with QRIS and get your license after verification.</p><a class="btn solid" href="rental-ea.html">Rent EA</a></div>
+    <div class="promo" id="ebook-store"><span class="badge promo-badge" style="position:static;align-self:flex-start">PROMO</span><h3>E-BOOK STORE</h3><p>Trading e-books by Mang Arte, from candlestick basics to Smart Money Concepts and Elliott Wave.</p><a class="btn solid" href="ebook.html">Browse E-books</a></div>
     <div class="promo"><h3>TRADING CLASS</h3><p>Learn step by step with Mang Arte in a guided trading class.</p><a class="btn solid" href="segera.html?f=class">Register for Trading Class</a></div>
     <div class="promo"><h3>TRADING SIGNALS</h3><p>Get trading signals and market updates from MIMOS.</p><a class="btn solid" href="segera.html?f=signals">Get Trading Signals</a></div>
     <div class="promo" id="copy-trade"><span class="badge" style="position:static;align-self:flex-start">COMING SOON</span><h3>COPY TRADE</h3><p>Copy trade is being prepared and has not launched yet. Join the community for updates.</p><a class="btn solid" href="https://t.me/TradingOfTrader" target="_blank" rel="noopener">Get updates</a></div>
@@ -370,7 +338,7 @@ footer a:hover{color:var(--gold2)}
   <div class="wrap">
     <div class="fgrid">
       <div><a class="logo" href="#home"><img src="assets/logo-icon.webp" alt="" width="55" height="36" style="height:34px;width:auto"><span class="gold">MIMOS<small>UNIVERSE</small></span></a><p style="margin-top:12px">ONE INTELLIGENCE. MULTIPLE WORLDS.</p></div>
-      <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#universe">Universe</a></li><li><a href="#store">Store</a></li><li><a href="#store">E-Books</a></li><li><a href="rental-ea.html">Rent EA</a></li><li><a href="#copy-trade">Copy Trade</a></li></ul></div>
+      <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#universe">Universe</a></li><li><a href="ebook.html">Store</a></li><li><a href="ebook.html">E-Books</a></li><li><a href="rental-ea.html">Rent EA</a></li><li><a href="#copy-trade">Copy Trade</a></li></ul></div>
       <div><h4>Support</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="faq.html#pembayaran">Payment Guide</a></li><li><a href="syarat-layanan.html">Terms of Service</a></li><li><a href="kebijakan-privasi.html">Privacy Policy</a></li><li><a href="kebijakan-refund.html">Refund Policy</a></li><li><a href="syarat-sewa-ea.html">EA Rental Terms</a></li></ul></div>
       <div><h4>Payment Methods</h4><div class="pay"><span>PayPal</span><span>DANA</span><span>QRIS</span></div><p class="meta" style="margin-top:8px">(Indonesia)</p></div>
       <div><h4>Follow Us</h4><div class="social"><a href="segera.html?f=youtube" aria-label="YouTube">YT</a><a href="https://t.me/Mamang_Arte" target="_blank" rel="noopener" aria-label="Telegram">TG</a><a href="segera.html?f=discord" aria-label="Discord">DC</a><a href="segera.html?f=x" aria-label="X">X</a><a href="segera.html?f=instagram" aria-label="Instagram">IG</a></div></div>
@@ -459,6 +427,17 @@ document.addEventListener('click',function(e){
   try{ navigator.clipboard.writeText(c).then(done,done); }catch(_){ done(); }
   try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:'klik/Salin kode '+c,title:'Salin kode '+c,event:true}); }catch(_){}
 });
+</script>
+<script>
+// Promo perkenalan: tutup dengan tombol x, dan hilang otomatis setelah 31 Des 2026
+(function(){
+  var bar=document.getElementById('topbar'), x=document.getElementById('topbarX');
+  var over=Date.now()>=Date.UTC(2027,0,1), closed=false;
+  try{ closed=sessionStorage.getItem('mimos-topbar')==='1'; }catch(e){}
+  if(over||closed) bar.hidden=true;
+  if(over) document.querySelectorAll('.promo-badge').forEach(function(b){b.hidden=true;});
+  x.addEventListener('click',function(){ bar.hidden=true; try{sessionStorage.setItem('mimos-topbar','1');}catch(e){} });
+})();
 </script>
 <script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>

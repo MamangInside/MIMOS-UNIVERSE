@@ -57,7 +57,7 @@
   'No reviews yet. Be the first to share your experience.':'Belum ada ulasan. Jadilah yang pertama membagikan pengalamanmu.',
   'Write a review':'Tulis ulasan','Submit review':'Kirim ulasan',
   'Reviews appear after moderation. Please don’t include personal contact details.':'Ulasan tampil setelah dimoderasi. Jangan cantumkan data kontak pribadi.',
-  'Reviews reflect personal experiences. Trading results differ for everyone and are not guaranteed.':'Ulasan mencerminkan pengalaman pribadi. Hasil trading setiap orang berbeda dan tidak dijamin.','Your name':'Namamu','Rating':'Penilaian','Your review':'Ulasanmu',
+  'Reviews reflect personal experiences. Trading results differ for everyone and are not guaranteed.':'Ulasan mencerminkan pengalaman pribadi. Hasil trading setiap orang berbeda dan tidak dijamin.','E-BOOK STORE':'TOKO E-BOOK','Trading e-books by Mang Arte, from candlestick basics to Smart Money Concepts and Elliott Wave.':'E-book trading oleh Mang Arte, dari dasar candlestick sampai Smart Money Concepts dan Elliott Wave.','Browse E-books':'Lihat E-book','Back to home':'Kembali ke beranda','Close':'Tutup','Your name':'Namamu','Rating':'Penilaian','Your review':'Ulasanmu',
   'Share your experience with MIMOS (min. 20 characters)':'Bagikan pengalamanmu dengan MIMOS (min. 20 karakter)','MIMOS Universe – silver M with eagle and wings over the earth':'MIMOS Universe – huruf M perak dengan elang dan sayap di atas bumi'
   };
   function tr(s){

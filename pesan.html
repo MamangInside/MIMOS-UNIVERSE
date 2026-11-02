@@ -68,11 +68,12 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
 .promo-bar .copied{display:block;min-height:16px;margin-top:6px;color:var(--gold2);font-size:12px}
 
 .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:13px}
+@media (max-width:480px){.brand{font-size:15px;letter-spacing:.06em;gap:6px}.brand img{height:26px;width:auto}.btn.sm{padding:7px 10px;font-size:12px}.bar .langsw button{padding:6px 8px}.bar{gap:6px}.right{gap:6px}}
 </style>
 </head><body>
 <header><div class="bar">
   <a class="brand" href="index.html"><img src="assets/logo-icon.webp" alt="" width="55" height="36">MIMOS</a>
-  <div class="right"><div class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><a class="back" href="index.html#store">&larr; <span data-l="id">Kembali ke toko</span><span data-l="en">Back to store</span></a></div>
+  <div class="right"><div class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="id" aria-pressed="false">ID</button></div><a class="back" href="ebook.html">&larr; <span data-l="id">Kembali ke toko</span><span data-l="en">Back to store</span></a></div>
 </div></header>
 <main>
 <h1><span data-l="id">Ringkasan pemesanan</span><span data-l="en">Order summary</span></h1>
@@ -117,11 +118,11 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
     </div>
     <div class="status" id="status"></div>
   </div>
-  <div class="foot"><a href="index.html#store">&larr; <span data-l="id">Pilih e-book lain</span><span data-l="en">Choose another e-book</span></a><a href="mailto:mimos.universe.official@gmail.com"><span data-l="id">Butuh bantuan?</span><span data-l="en">Need help?</span></a></div>
+  <div class="foot"><a href="ebook.html">&larr; <span data-l="id">Pilih e-book lain</span><span data-l="en">Choose another e-book</span></a><a href="mailto:mimos.universe.official@gmail.com"><span data-l="id">Butuh bantuan?</span><span data-l="en">Need help?</span></a></div>
 </section>
 
 <section id="missing" hidden>
-  <div class="card"><p style="margin-bottom:14px"><span data-l="id">E-book yang kamu pilih tidak ditemukan. Silakan pilih lagi dari toko.</span><span data-l="en">We couldn’t find the e-book you selected. Please choose again from the store.</span></p><a class="btn solid" href="index.html#store"><span data-l="id">Ke toko e-book</span><span data-l="en">Go to the e-book store</span></a></div>
+  <div class="card"><p style="margin-bottom:14px"><span data-l="id">E-book yang kamu pilih tidak ditemukan. Silakan pilih lagi dari toko.</span><span data-l="en">We couldn’t find the e-book you selected. Please choose again from the store.</span></p><a class="btn solid" href="ebook.html"><span data-l="id">Ke toko e-book</span><span data-l="en">Go to the e-book store</span></a></div>
 </section>
 </main>
 <footer>© 2026 MIMOS Universe. <span data-l="id">Hak cipta dilindungi.</span><span data-l="en">All rights reserved.</span></footer>
@@ -191,6 +192,10 @@ document.addEventListener('click',function(e){
   try{ navigator.clipboard.writeText(c).then(done,done); }catch(_){ done(); }
   try{ if(window.goatcounter&&window.goatcounter.count) window.goatcounter.count({path:'klik/Salin kode '+c,title:'Salin kode '+c,event:true}); }catch(_){}
 });
+</script>
+<script>
+// Sembunyikan banner promo setelah 31 Des 2026
+if(Date.now()>=Date.UTC(2027,0,1)){ document.querySelectorAll('.promo-bar').forEach(function(e){ (e.closest('.card')||e).hidden=true; }); }
 </script>
 <script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
