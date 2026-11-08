@@ -34,7 +34,7 @@ ul{margin:0 0 10px 20px}
 li{margin-bottom:4px}
 .note{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:14px 16px;margin:16px 0;color:var(--muted);font-size:14px}
 .cta{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap}
-footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:var(--muted);font-size:12px}
+footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:var(--muted);font-size:12px;line-height:1.9}footer a{margin:0 3px}
 @media (max-width:480px){.brand{font-size:15px;letter-spacing:.06em;gap:6px}.brand img{height:26px;width:auto}.btn.sm{padding:7px 10px;font-size:12px}.bar .langsw button{padding:6px 8px}.bar{gap:6px}.right{gap:6px}}
 </style>
 </head><body>
@@ -47,7 +47,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
 <p class="upd"><span data-l="id">Terakhir diperbarui: 2 November 2026</span><span data-l="en">Last updated: November 2, 2026</span></p>
 <div data-l="id"><p class="note">Kami mengumpulkan data seminimal mungkin. Halaman ini menjelaskan data apa yang dipakai di situs MIMOS Universe dan untuk apa.</p>
 <h2>1. Data yang kami terima</h2>
-<ul><li><b>Statistik kunjungan.</b> Kami memakai GoatCounter untuk menghitung kunjungan halaman dan klik tombol secara umum (halaman, negara, perangkat, asal kunjungan). Layanan ini tidak memakai cookie pelacak dan tidak mengenali kamu sebagai individu.</li><li><b>Ulasan.</b> Kalau kamu mengirim ulasan, kami menerima nama yang kamu tulis, penilaian, dan isi ulasan. Ulasan ditinjau dulu sebelum ditampilkan.</li><li><b>Pemesanan e-book.</b> Pembayaran diproses oleh Sociabuzz. Alamat email dan data pembayaran kamu diberikan langsung ke Sociabuzz, bukan ke situs ini.</li><li><b>Sewa EA.</b> Kami menerima nomor akun MT5, paket yang dipilih, nama pengguna Telegram, dan bukti pembayaran yang kamu kirim lewat Telegram atau email untuk memverifikasi pembayaran dan membuat key lisensi.</li></ul>
+<ul><li><b>Statistik kunjungan.</b> Kami memakai GoatCounter untuk menghitung kunjungan halaman dan klik tombol secara umum (halaman, negara, perangkat, asal kunjungan). Layanan ini tidak memakai cookie pelacak dan tidak mengenali kamu sebagai individu.</li><li><b>Ulasan.</b> Kalau kamu mengirim ulasan, kami menerima nama yang kamu tulis, penilaian, dan isi ulasan. Ulasan ditinjau dulu sebelum ditampilkan.</li><li><b>Pemesanan e-book.</b> Pembayaran diproses oleh Sociabuzz. Alamat email dan data pembayaran kamu diberikan langsung ke Sociabuzz, bukan ke situs ini.</li><li><b>Sewa EA.</b> Kami menerima nomor akun MT5, nama broker, server MT5, paket yang dipilih, nama pengguna Telegram, dan bukti pembayaran yang kamu kirim lewat Telegram atau email untuk memverifikasi pembayaran dan membuat serta mengaktifkan lisensi online. Setelah lisensi aktif, EA mengirim nomor akun, broker, dan server MT5 ke server lisensi kami (Supabase) secara berkala untuk memeriksa status lisensi.</li></ul>
 <h2>2. Yang tersimpan di perangkatmu</h2>
 <p>Situs menyimpan pilihan bahasa di penyimpanan browser, dan ringkasan pesanan sewa EA sementara selama sesi browser agar halaman bukti pesanan tetap tampil. Data ini tidak dikirim ke server kami. Kamu bisa menghapusnya lewat pengaturan browser.</p>
 <h2>3. Layanan pihak ketiga</h2>
@@ -61,7 +61,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
 <h2>7. Anak di bawah umur</h2><p>Produk kami ditujukan untuk orang dewasa. Trading berisiko tinggi dan tidak cocok untuk anak di bawah umur.</p>
 <h2>8. Perubahan</h2><p>Kebijakan ini dapat diperbarui sewaktu-waktu. Versi terbaru berlaku sejak dipublikasikan.</p></div><div data-l="en"><p class="note">We collect as little data as possible. This page explains what data is used on the MIMOS Universe site and why.</p>
 <h2>1. Data we receive</h2>
-<ul><li><b>Visit statistics.</b> We use GoatCounter to count page visits and button clicks in general (page, country, device, referrer). It does not use tracking cookies and does not identify you as an individual.</li><li><b>Reviews.</b> If you submit a review, we receive the name you enter, your rating, and the review text. Reviews are moderated before they are shown.</li><li><b>E-book orders.</b> Payments are processed by Sociabuzz. Your email address and payment details go directly to Sociabuzz, not to this site.</li><li><b>EA rental.</b> We receive your MT5 account number, chosen package, Telegram username, and the payment proof you send via Telegram or email, in order to verify payment and create your license key.</li></ul>
+<ul><li><b>Visit statistics.</b> We use GoatCounter to count page visits and button clicks in general (page, country, device, referrer). It does not use tracking cookies and does not identify you as an individual.</li><li><b>Reviews.</b> If you submit a review, we receive the name you enter, your rating, and the review text. Reviews are moderated before they are shown.</li><li><b>E-book orders.</b> Payments are processed by Sociabuzz. Your email address and payment details go directly to Sociabuzz, not to this site.</li><li><b>EA rental.</b> We receive your MT5 account number, broker name, MT5 server, chosen package, Telegram username, and the payment proof you send via Telegram or email, in order to verify payment and create and activate your online license. Once active, the EA periodically sends your MT5 account number, broker and server to our license server (Supabase) to check the license status.</li></ul>
 <h2>2. What is stored on your device</h2>
 <p>The site stores your language choice in browser storage, and temporarily keeps your EA rental order summary for the browser session so the receipt page stays visible. This data is not sent to our servers. You can clear it in your browser settings.</p>
 <h2>3. Third-party services</h2>
@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
   <a class="back" href="syarat-layanan.html"><span data-l="id">Baca Syarat Layanan</span><span data-l="en">Read the Terms of Service</span></a>
 </div>
 </main>
-<footer>© 2026 MIMOS Universe. <span data-l="id">Hak cipta dilindungi.</span><span data-l="en">All rights reserved.</span></footer>
+<footer><a href="faq.html">FAQ</a> · <a href="syarat-layanan.html"><span data-l="id">Syarat Layanan</span><span data-l="en">Terms of Service</span></a> · <a href="kebijakan-privasi.html"><span data-l="id">Kebijakan Privasi</span><span data-l="en">Privacy Policy</span></a> · <a href="kebijakan-refund.html"><span data-l="id">Kebijakan Refund</span><span data-l="en">Refund Policy</span></a> · <a href="syarat-sewa-ea.html"><span data-l="id">Syarat Sewa EA</span><span data-l="en">EA Rental Terms</span></a><br>© 2026 MIMOS Universe. <span data-l="id">Hak cipta dilindungi.</span><span data-l="en">All rights reserved.</span></footer>
 <script data-goatcounter="https://mimos.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
