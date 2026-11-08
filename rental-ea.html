@@ -108,6 +108,9 @@ footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;color:v
     <label class="f" for="sr" data-k="srLabel" style="margin-top:14px"></label>
     <input class="txt" id="sr" autocomplete="off" maxlength="100">
     <p class="hint" data-k="srHint"></p>
+    <label class="f" for="em" data-k="emLabel" style="margin-top:14px"></label>
+    <input class="txt" id="em" type="email" autocomplete="email" maxlength="120">
+    <p class="hint" data-k="emHint"></p>
   </div>
   <div class="card">
     <label class="agree"><input type="checkbox" id="ack"><span data-k="ack"></span></label>
@@ -174,7 +177,7 @@ var PAKET=[
 /* ============================================================== */
 var TX={
  id:{home:'Kembali',title:'Sewa EA MIMOS',fTerms:'Syarat & Refund Sewa EA',fGuide:'Panduan PDF',guide:'Unduh panduan pemasangan (PDF)',qrFail:'Gambar QRIS gagal dimuat. Jangan transfer dulu. Hubungi Telegram @'+TELEGRAM+' untuk meminta QRIS resmi.',clTitle:'Sewa EA belum dibuka',clText:'Kami sedang menyiapkan sistemnya. Gabung komunitas Telegram untuk jadi yang pertama tahu saat pendaftaran dibuka.',clJoin:'Gabung komunitas',clHome:'Kembali ke beranda',scam:'Waspada penipuan: satu-satunya QRIS resmi MIMOS ada di halaman ini. Pastikan nama merchant yang muncul saat scan adalah “Mimos, Service”. Jangan transfer ke rekening lain yang dikirim lewat chat.',sub:'Pilih paket, isi nomor akun MT5, lalu bayar dengan QRIS.',s1:'1. Paket & akun',s2:'2. Pembayaran',s3:'3. Konfirmasi',ea:'Produk EA',
-  pkTitle:'Pilih paket',accLabel:'Nomor akun MT5',accHint:'Lisensi berlaku untuk satu akun MT5 (nomor akun, broker, dan server). Pastikan sudah benar.',brLabel:'Broker',srLabel:'Trading server',srHint:'Salin persis dari MT5: nama broker dan server terlihat di File › Login to Trade Account. Salah ketik membuat lisensi tidak terbaca.',eBr:'Isi nama broker.',eSr:'Isi nama trading server.',creating:'Membuat pesanan…',eNet:'Pesanan gagal dibuat. Periksa koneksi lalu coba lagi, atau hubungi Telegram @'+TELEGRAM+'.',wr:'Setelah lisensi aktif: di MT5 buka Tools › Options › Expert Advisors, centang Allow WebRequest, lalu tambahkan https://sgcneqyldeprjsrukotn.supabase.co.',accPh:'Contoh: 12345678',
+  pkTitle:'Pilih paket',accLabel:'Nomor akun MT5',accHint:'Lisensi berlaku untuk satu akun MT5 (nomor akun, broker, dan server). Pastikan sudah benar.',brLabel:'Broker',srLabel:'Trading server',srHint:'Salin persis dari MT5: nama broker dan server terlihat di File › Login to Trade Account. Salah ketik membuat lisensi tidak terbaca.',eBr:'Isi nama broker.',eSr:'Isi nama trading server.',emLabel:'Email',emHint:'File EA dikirim ke email ini setelah pembayaran diverifikasi. Pastikan benar dan cek folder spam.',eEm:'Isi alamat email yang valid.',creating:'Membuat pesanan…',eNet:'Pesanan gagal dibuat. Periksa koneksi lalu coba lagi, atau hubungi Telegram @'+TELEGRAM+'.',wr:'Setelah lisensi aktif: di MT5 buka Tools › Options › Expert Advisors, centang Allow WebRequest, lalu tambahkan https://sgcneqyldeprjsrukotn.supabase.co.',accPh:'Contoh: 12345678',
   ack:'Saya mengerti lisensi terikat pada nomor akun MT5 di atas, serta trading dan EA berisiko tinggi tanpa jaminan profit. Saya menyetujui <a href="syarat-sewa-ea.html" target="_blank" rel="noopener">Syarat & Refund Sewa EA</a>.',
   risk:'Hasil backtest, forward test, dan performa masa lalu tidak menjamin hasil di masa depan.',next:'Lanjut ke pembayaran',
   ePkg:'Pilih paket dulu.',eAcc:'Nomor akun MT5 harus berupa angka (5–12 digit).',eAck:'Centang persetujuan dulu untuk lanjut.',
@@ -182,11 +185,11 @@ var TX={
   how:['Buka e-wallet atau m-banking, lalu scan QRIS.','Masukkan nominal persis sesuai paket.','Simpan screenshot bukti pembayaran, lalu tekan tombol di bawah.'],
   paid:'Saya sudah bayar',back:'Kembali',intl:'Pembayaran saat ini hanya lewat QRIS (Indonesia). Pembeli luar negeri, hubungi Telegram @'+TELEGRAM+'.',
   rcTitle:'Bukti pesanan',oid:'ID pesanan',date:'Tanggal',pkg:'Paket',acc:'Nomor akun MT5',amt:'Nominal',status:'Status',statusV:'Menunggu verifikasi',ea2:'EA',
-  rcNote:'Langkah terakhir: kirim konfirmasi ke Telegram beserta screenshot bukti pembayaran. Lisensi diaktifkan setelah pembayaran diverifikasi.',
+  rcNote:'Langkah terakhir: kirim konfirmasi ke Telegram beserta screenshot bukti pembayaran. Lisensi diaktifkan dan file EA dikirim ke emailmu setelah pembayaran diverifikasi.',
   tg:'Konfirmasi via Telegram @'+TELEGRAM,copyMsg:'Salin pesan konfirmasi',msgCopied:'Pesan tersalin',newOrder:'Buat pesanan baru',loc:'id-ID',
-  msg:function(o){return 'Halo Mang Arte, saya sudah membayar sewa EA MIMOS.\n\nID pesanan: '+o.oid+'\nEA: '+EA_NAME+'\nPaket: '+o.pk+'\nNominal: '+o.amt+'\nNomor akun MT5: '+o.acc+'\nBroker: '+o.br+'\nServer: '+o.sr+'\n\nMohon diverifikasi dan dikirimkan lisensinya. Bukti pembayaran saya lampirkan.';}},
+  msg:function(o){return 'Halo Mang Arte, saya sudah membayar sewa EA MIMOS.\n\nID pesanan: '+o.oid+'\nEA: '+EA_NAME+'\nPaket: '+o.pk+'\nNominal: '+o.amt+'\nNomor akun MT5: '+o.acc+'\nBroker: '+o.br+'\nServer: '+o.sr+'\nEmail: '+o.em+'\n\nMohon diverifikasi dan dikirimkan lisensinya. Bukti pembayaran saya lampirkan.';}},
  en:{home:'Back',title:'MIMOS EA Rental',fTerms:'EA Rental Terms & Refund',fGuide:'Setup guide (PDF)',guide:'Download setup guide (PDF, Indonesian)',qrFail:'The QRIS image failed to load. Please do not transfer yet. Contact Telegram @'+TELEGRAM+' to request the official QRIS.',clTitle:'EA rental is not open yet',clText:'We are still getting the system ready. Join the Telegram community to be the first to know when registration opens.',clJoin:'Join the community',clHome:'Back to home',scam:'Beware of scams: the only official MIMOS QRIS is on this page. Make sure the merchant name shown when you scan is “Mimos, Service”. Never transfer to any other account sent to you via chat.',sub:'Choose a package, enter your MT5 account number, then pay with QRIS.',s1:'1. Package & account',s2:'2. Payment',s3:'3. Confirmation',ea:'EA product',
-  pkTitle:'Choose a package',accLabel:'MT5 account number',accHint:'The license is valid for this single MT5 account (account number, broker and server). Please double-check it.',brLabel:'Broker',srLabel:'Trading server',srHint:'Copy exactly from MT5: broker and server appear under File › Login to Trade Account. A typo makes the license unreadable.',eBr:'Please enter the broker name.',eSr:'Please enter the trading server.',creating:'Creating your order…',eNet:'The order could not be created. Check your connection and try again, or contact Telegram @'+TELEGRAM+'.',wr:'After activation: in MT5 open Tools › Options › Expert Advisors, tick Allow WebRequest and add https://sgcneqyldeprjsrukotn.supabase.co.',accPh:'Example: 12345678',
+  pkTitle:'Choose a package',accLabel:'MT5 account number',accHint:'The license is valid for this single MT5 account (account number, broker and server). Please double-check it.',brLabel:'Broker',srLabel:'Trading server',srHint:'Copy exactly from MT5: broker and server appear under File › Login to Trade Account. A typo makes the license unreadable.',eBr:'Please enter the broker name.',eSr:'Please enter the trading server.',emLabel:'Email',emHint:'The EA file is emailed here after payment is verified. Double-check it and look in your spam folder.',eEm:'Please enter a valid email address.',creating:'Creating your order…',eNet:'The order could not be created. Check your connection and try again, or contact Telegram @'+TELEGRAM+'.',wr:'After activation: in MT5 open Tools › Options › Expert Advisors, tick Allow WebRequest and add https://sgcneqyldeprjsrukotn.supabase.co.',accPh:'Example: 12345678',
   ack:'I understand the license is tied to the MT5 account number above, and that trading and EAs carry high risk with no guarantee of profit. I agree to the <a href="syarat-sewa-ea.html" target="_blank" rel="noopener">EA Rental Terms & Refund</a>.',
   risk:'Backtest results, forward test results, and past performance do not guarantee future results.',next:'Continue to payment',
   ePkg:'Please choose a package first.',eAcc:'The MT5 account number must be digits only (5–12 digits).',eAck:'Please tick the agreement box to continue.',
@@ -194,9 +197,9 @@ var TX={
   how:['Open your e-wallet or mobile banking app and scan the QRIS.','Enter the exact amount for your package.','Save a screenshot of the payment proof, then tap the button below.'],
   paid:'I have paid',back:'Back',intl:'Payment is currently by QRIS only (Indonesia). International buyers, please contact Telegram @'+TELEGRAM+'.',
   rcTitle:'Order receipt',oid:'Order ID',date:'Date',pkg:'Package',acc:'MT5 account number',amt:'Amount',status:'Status',statusV:'Awaiting verification',ea2:'EA',
-  rcNote:'Final step: send your confirmation on Telegram together with a screenshot of the payment proof. The license is activated after the payment is verified.',
+  rcNote:'Final step: send your confirmation on Telegram together with a screenshot of the payment proof. The license is activated and the EA file is emailed to you after the payment is verified.',
   tg:'Confirm via Telegram @'+TELEGRAM,copyMsg:'Copy confirmation message',msgCopied:'Message copied',newOrder:'Start a new order',loc:'en-US',
-  msg:function(o){return 'Hello Mang Arte, I have paid for the MIMOS EA rental.\n\nOrder ID: '+o.oid+'\nEA: '+EA_NAME+'\nPackage: '+o.pk+'\nAmount: '+o.amt+'\nMT5 account number: '+o.acc+'\nBroker: '+o.br+'\nServer: '+o.sr+'\n\nPlease verify and send my license. I am attaching my payment proof.';}}
+  msg:function(o){return 'Hello Mang Arte, I have paid for the MIMOS EA rental.\n\nOrder ID: '+o.oid+'\nEA: '+EA_NAME+'\nPackage: '+o.pk+'\nAmount: '+o.amt+'\nMT5 account number: '+o.acc+'\nBroker: '+o.br+'\nServer: '+o.sr+'\nEmail: '+o.em+'\n\nPlease verify and send my license. I am attaching my payment proof.';}}
 };
 var $=function(i){return document.getElementById(i)};
 var LG=function(){return (window.mimosLang&&window.mimosLang()==='en')?'en':'id'};
@@ -208,7 +211,7 @@ function count(n){ try{ if(window.goatcounter&&window.goatcounter.count) window.
 function pk(id){ return PAKET.filter(function(p){return p.id===id})[0]; }
 function pkName(p){ return LG()==='en'?p.en_:p.id_; }
 function pkDesc(p){ var t=LG(); return p.days? (t==='en'?'Full EA access for '+p.days+' days':'Akses penuh EA selama '+p.days+' hari') : (t==='en'?'Full EA access, no expiry':'Akses penuh EA tanpa batas waktu'); }
-function msgOf(){ var t=TX[LG()], p=pk(order.pk); return t.msg({oid:order.oid,pk:pkName(p),amt:rp(p.idr),acc:order.acc,br:order.br,sr:order.sr}); }
+function msgOf(){ var t=TX[LG()], p=pk(order.pk); return t.msg({oid:order.oid,pk:pkName(p),amt:rp(p.idr),acc:order.acc,br:order.br,sr:order.sr,em:order.em}); }
 
 function renderList(){
   var sel=document.querySelector('input[name=pk]:checked'), cur=sel?sel.value:null, box=$('pkList'); box.textContent='';
@@ -222,7 +225,7 @@ function renderList(){
 }
 function renderReceipt(){
   if(!order) return; var t=TX[LG()], p=pk(order.pk), rc=$('rc'); rc.textContent='';
-  [[t.oid,order.oid],[t.date,new Date(order.ts).toLocaleString(t.loc,{dateStyle:'medium',timeStyle:'short'})],[t.ea2,EA_NAME],[t.pkg,pkName(p)],[t.acc,order.acc],[t.brLabel,order.br],[t.srLabel,order.sr],[t.amt,rp(p.idr)]].forEach(function(x){
+  [[t.oid,order.oid],[t.date,new Date(order.ts).toLocaleString(t.loc,{dateStyle:'medium',timeStyle:'short'})],[t.ea2,EA_NAME],[t.pkg,pkName(p)],[t.acc,order.acc],[t.brLabel,order.br],[t.srLabel,order.sr],[t.emLabel,order.em],[t.amt,rp(p.idr)]].forEach(function(x){
     var d=document.createElement('div'); var a=document.createElement('span'); a.textContent=x[0]; var b=document.createElement('b'); b.textContent=x[1]; d.appendChild(a); d.appendChild(b); rc.appendChild(d);
   });
   var d=document.createElement('div'), a=document.createElement('span'), b=document.createElement('b'), c=document.createElement('span'); a.textContent=t.status; c.className='chip'; c.textContent=t.statusV; b.appendChild(c); d.appendChild(a); d.appendChild(b); rc.appendChild(d);
@@ -245,18 +248,19 @@ function render(){
 function copy(txt,okEl,key){ var t=TX[LG()], done=function(){ $(okEl).textContent=t[key]; }; try{ navigator.clipboard.writeText(txt).then(done,done); }catch(_){ done(); } }
 
 $('toPay').addEventListener('click',function(){
-  var t=TX[LG()], sel=document.querySelector('input[name=pk]:checked'), acc=$('acc').value.replace(/\s/g,''), br=$('br').value.trim(), sr=$('sr').value.trim(), btn=$('toPay');
+  var t=TX[LG()], sel=document.querySelector('input[name=pk]:checked'), acc=$('acc').value.replace(/\s/g,''), br=$('br').value.trim(), sr=$('sr').value.trim(), em=$('em').value.trim(), btn=$('toPay');
   if(!sel){ $('err1').textContent=t.ePkg; return; }
   if(!/^\d{5,12}$/.test(acc)){ $('err1').textContent=t.eAcc; return; }
   if(br.length<2){ $('err1').textContent=t.eBr; return; }
   if(sr.length<2){ $('err1').textContent=t.eSr; return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ $('err1').textContent=t.eEm; return; }
   if(!$('ack').checked){ $('err1').textContent=t.eAck; return; }
   btn.disabled=true; $('err1').textContent=t.creating;
-  fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json',apikey:API_KEY,Authorization:'Bearer '+API_KEY},body:JSON.stringify({plan:API_PLAN[sel.value],account:acc,broker:br,server:sr})})
+  fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json',apikey:API_KEY,Authorization:'Bearer '+API_KEY},body:JSON.stringify({plan:API_PLAN[sel.value],account:acc,broker:br,server:sr,email:em})})
    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok&&d.ok,d:d}; }); })
    .then(function(x){
      if(!x.ok){ $('err1').textContent=x.d.error||t.eNet; return; }
-     order={pk:sel.value,acc:acc,br:br,sr:sr,ts:Date.now(),oid:x.d.order_code};
+     order={pk:sel.value,acc:acc,br:br,sr:sr,em:em,ts:Date.now(),oid:x.d.order_code};
      count('EA pilih paket: '+sel.value); $('err1').textContent=''; $('payAmt').textContent=rp(pk(sel.value).idr); show(2);
    })
    .catch(function(){ $('err1').textContent=t.eNet; })
@@ -271,7 +275,7 @@ $('paid').addEventListener('click',function(){
 $('tgBtn').addEventListener('click',function(){ count('EA konfirmasi Telegram: '+order.pk); });
 $('copyMsg').addEventListener('click',function(){ copy(msgOf(),'ok3','msgCopied'); });
 $('newOrder').addEventListener('click',function(){
-  try{ sessionStorage.removeItem('mimos-ea-order'); }catch(_){} order=null; $('acc').value=''; $('br').value=''; $('sr').value=''; $('ack').checked=false;
+  try{ sessionStorage.removeItem('mimos-ea-order'); }catch(_){} order=null; $('acc').value=''; $('br').value=''; $('sr').value=''; $('em').value=''; $('ack').checked=false;
   document.querySelectorAll('input[name=pk]').forEach(function(r){ r.checked=false; }); render(); show(1);
 });
 document.addEventListener('langchange',function(){ render(); });
