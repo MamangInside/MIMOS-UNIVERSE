@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07070a">
+<meta name="description" content="MIMOS AI Aquaculture — asisten AI untuk membantu pembudidaya ikan lele memantau kondisi kolam, kualitas air, dan pemberian pakan.">
+<title>MIMOS AI Aquaculture — MIMOS Universe</title>
+<link rel="icon" href="assets/logo-icon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070a;--panel:#0f100d;--line:#4a3a1a;--gold:#e8b84a;--gold2:#f6d98a;--gold3:#a8791f;--text:#f2ede2;--muted:#b9b2a2;--green:#7fbd8c;--display:'Cinzel',Georgia,serif;--body:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--text);font:400 15px/1.65 var(--body)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,100% - 36px);margin:auto}
+.gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 21px;border-radius:7px;border:1px solid var(--gold);font-size:12px;font-weight:700;letter-spacing:.04em;transition:.2s}
+.btn.primary{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1204}.btn.outline{color:var(--gold2)}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+header{position:sticky;top:0;z-index:10;background:rgba(7,7,10,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font:700 20px var(--display);letter-spacing:.12em}.brand img{width:42px;height:34px;object-fit:contain}
+.brand small{display:block;font:600 8px var(--body);letter-spacing:.42em;color:var(--gold);margin-top:-3px}
+.navlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:12px}.navlinks a:hover{color:var(--gold2)}
+.back{font-size:12px;color:var(--gold2);border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 78% 40%,rgba(37,105,67,.28),transparent 38%),radial-gradient(ellipse at 18% 0%,rgba(232,184,74,.12),transparent 35%),linear-gradient(145deg,#090d0b,#07070a 68%)}
+.hero-grid{min-height:560px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:42px;padding:64px 0}
+.kicker{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.2em}
+h1{font:700 clamp(38px,6vw,68px)/1.05 var(--display);letter-spacing:.025em;margin:16px 0}
+.hero p{color:var(--muted);max-width:570px;font-size:14px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-note{margin-top:16px;color:var(--gold2);font-size:11px}
+.visual{min-height:380px;position:relative;display:grid;place-items:center;border:1px solid #42543a;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse at center,rgba(50,128,82,.42),transparent 48%),linear-gradient(145deg,#12281e,#0a1715 65%,#1a1609)}
+.visual:before,.visual:after{content:"";position:absolute;width:140%;height:1px;background:rgba(232,184,74,.2);transform:rotate(-23deg)}.visual:before{top:34%}.visual:after{top:70%}
+.ring{position:absolute;width:260px;height:260px;border:1px solid rgba(232,184,74,.25);border-radius:50%}.ring:after{content:"";position:absolute;inset:-32px;border:1px solid rgba(232,184,74,.12);border-radius:50%}
+.fish{font-size:126px;z-index:1;filter:drop-shadow(0 14px 25px #0008)}
+.visual-caption{position:absolute;bottom:24px;text-align:center;z-index:2}.visual-caption b{display:block;font:700 19px var(--display);letter-spacing:.12em;color:var(--gold2)}.visual-caption span{font-size:9px;letter-spacing:.2em;color:var(--muted)}
+.float{position:absolute;z-index:3;background:#090e0ceF;border:1px solid #8d7134;border-radius:8px;padding:10px 12px;box-shadow:0 10px 30px #0006}.float small{display:block;color:var(--gold);font-size:8px;letter-spacing:.12em}.float b{font-size:13px}.float span{display:block;color:var(--muted);font-size:9px}.f1{top:22px;left:18px}.f2{right:16px;bottom:86px}
+section{padding:68px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 30px}.section-head h2{font:700 clamp(25px,4vw,36px)/1.2 var(--display);margin:8px 0}.section-head p{font-size:13px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.feature{padding:22px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,#12140f,#0d0d0c)}
+.icon{font-size:27px}.feature h3{font-size:14px;color:var(--gold2);margin:10px 0 6px}.feature p{font-size:12px;color:var(--muted)}
+.workflow{background:linear-gradient(120deg,#141307,#0d120e);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{padding:18px;border:1px solid var(--line);border-radius:10px;background:#0b0d0b}
+.step em{font:700 22px var(--display);color:var(--gold);font-style:normal}.step h3{font-size:13px;margin:8px 0}.step p{font-size:11px;color:var(--muted)}
+.dashboard{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:center}
+.dashboard-copy h2{font:700 30px/1.2 var(--display);margin:10px 0}.dashboard-copy p{font-size:13px;color:var(--muted)}
+.mock{border:1px solid #526044;border-radius:15px;padding:18px;background:linear-gradient(145deg,#111b14,#0c100d);box-shadow:0 18px 45px #0005}
+.mock-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #34402f;padding-bottom:12px;margin-bottom:14px;font-size:11px}.status{color:#9ed6a6;background:#16331f;border-radius:30px;padding:4px 9px;font-size:9px}
+.mock-title{font:700 18px var(--display);color:var(--gold2)}.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
+.metric{padding:12px;border:1px solid #354431;border-radius:8px;background:#0a100c}.metric small{display:block;color:var(--muted);font-size:9px}.metric b{font-size:18px}.mock-advice{padding:12px;border-left:2px solid var(--green);background:#142019;font-size:11px;color:#d7e4d4}
+.pricing{background:radial-gradient(ellipse at 50% 0,rgba(232,184,74,.08),transparent 45%),#090909;border-top:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.plan{padding:21px 17px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:flex;flex-direction:column;min-height:300px}
+.plan.hot{border-color:var(--gold);background:linear-gradient(155deg,#211a0b,#100f0c);box-shadow:0 0 28px #e8b84a12}
+.plan-label{font-size:9px;letter-spacing:.12em;color:var(--gold);font-weight:800}.plan h3{font:700 25px var(--display);margin:7px 0}
+.price{font-size:21px;color:var(--gold2);font-weight:800;white-space:nowrap}.price small{font-size:10px;color:var(--muted);font-weight:500}
+.plan ul{list-style:none;display:grid;gap:9px;margin:17px 0 22px;flex:1}.plan li{font-size:11px;color:var(--muted)}.plan li:before{content:"✦";color:var(--gold);margin-right:8px}.plan .btn{font-size:10px;padding:11px 8px}
+.note{font-size:10px;color:var(--muted);margin-top:17px;text-align:center}
+.faq{max-width:800px;margin:auto;display:grid;gap:10px}.faq details{border:1px solid var(--line);border-radius:9px;background:var(--panel);padding:15px}.faq summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--gold2)}.faq p{font-size:12px;color:var(--muted);padding-top:10px}
+.final-cta{text-align:center;border-block:1px solid var(--line);background:linear-gradient(110deg,#171306,#0b120d);padding:48px 20px}.final-cta h2{font:700 clamp(25px,4vw,36px) var(--display);margin-bottom:10px}.final-cta p{font-size:12px;color:var(--muted);margin-bottom:20px}
+footer{padding:24px 0;color:var(--muted);font-size:11px}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot a{color:var(--gold2)}
+@media(max-width:900px){.hero-grid{gap:24px}.plans{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.navlinks{display:none}.hero-grid,.dashboard{grid-template-columns:1fr}.hero-grid{padding:42px 0}.visual{min-height:300px}.features{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.dashboard-copy h2{font-size:26px}}
+@media(max-width:460px){.features,.plans,.steps{grid-template-columns:1fr}.plan{min-height:0}.visual{min-height:270px}.wrap{width:min(100% - 28px,1160px)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.hero.banner{background:#000;border-bottom:1px solid var(--line)}
+.hero.banner img{display:block;width:100%;height:auto;max-height:82vh;object-fit:cover;object-position:left center}
+.hero-copy{padding:38px 0 44px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 85% 30%,rgba(37,105,67,.22),transparent 45%),#090d0a}
+.hc-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+.hero-copy h1{font:700 clamp(27px,4.2vw,42px)/1.12 var(--display);letter-spacing:.025em;margin:12px 0}
+.hero-copy p{color:var(--muted);font-size:14px;max-width:580px}
+.hc-chips{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.hc-chips li{border:1px solid var(--line);border-radius:10px;background:#0d110d;padding:11px 12px;font-size:12px;color:var(--gold2);line-height:1.4}
+@media(max-width:760px){.hc-grid{grid-template-columns:1fr;gap:22px}.hero-copy{padding:28px 0 34px}}
+@media(max-width:460px){.hc-chips{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/logo-icon.webp" alt=""><span class="gold">MIMOS<small>UNIVERSE</small></span></a>
+    <nav class="navlinks"><a href="index.html">Home</a><a href="#fitur">Fitur</a><a href="#cara-kerja">Cara Kerja</a><a href="#paket">Paket</a><a href="#faq">FAQ</a></nav>
+    <a class="back" href="index.html">← MIMOS Universe</a>
+  </div>
+</header>
+
+<main>
+<section class="hero banner">
+  <img src="assets/aquaculture-hero.webp" width="1672" height="941" fetchpriority="high" alt="MIMOS AI Aquaculture: solusi cerdas untuk budidaya ikan lele. Monitoring kondisi kolam, analisis kualitas air, rekomendasi pemberian pakan, panduan treatment air, evaluasi perkembangan, dan konsultasi AI.">
+</section>
+<section class="hero-copy">
+  <div class="wrap hc-grid">
+    <div>
+      <span class="kicker">MIMOS UNIVERSE PRESENTS · AQUACULTURE INTELLIGENCE</span>
+      <h1><span class="gold">MIMOS AI</span> AQUACULTURE</h1>
+      <p>Asisten AI untuk budidaya ikan lele. Bantu pembudidaya memantau kondisi kolam, membaca kualitas air, mengatur pemberian pakan, dan menentukan langkah perawatan berdasarkan data budidaya.</p>
+      <div class="actions"><a class="btn primary" href="https://t.me/TradingOfTrader" target="_blank" rel="noopener">MULAI SEKARANG DI TELEGRAM</a><a class="btn outline" href="#paket">LIHAT PAKET</a></div>
+      <div class="hero-note">Mulai dari paket FREE · Kelola budidaya lebih terukur</div>
+    </div>
+    <ul class="hc-chips" aria-label="Fitur utama">
+      <li>🐟 Monitoring Kondisi Kolam</li><li>💧 Analisis Kualitas Air</li><li>🍽️ Rekomendasi Pemberian Pakan</li>
+      <li>🛡️ Panduan Treatment Air</li><li>📈 Evaluasi Perkembangan</li><li>🤖 Konsultasi AI Budidaya Lele</li>
+    </ul>
+  </div>
+</section>
+
+<section id="fitur">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">SMART FARMING ASSISTANT</span><h2 class="gold">SATU ASISTEN UNTUK MENGELOLA KOLAM</h2><p>Informasi budidaya disusun agar pembudidaya dapat memahami kondisi kolam dan langkah yang perlu diperhatikan.</p></div>
+    <div class="features">
+      <article class="feature"><div class="icon">🌡️</div><h3>Monitoring Kualitas Air</h3><p>Catat dan evaluasi parameter air seperti suhu dan pH berdasarkan alat ukur yang tersedia.</p></article>
+      <article class="feature"><div class="icon">🍽️</div><h3>Manajemen Pemberian Pakan</h3><p>Panduan waktu dan jumlah pakan dengan mempertimbangkan kondisi ikan dan air agar tidak berlebihan.</p></article>
+      <article class="feature"><div class="icon">💧</div><h3>Panduan Perawatan Air</h3><p>Arahan tindakan dan pemeriksaan ulang mengikuti kondisi kolam yang dilaporkan.</p></article>
+      <article class="feature"><div class="icon">🐟</div><h3>Data Siklus Budidaya</h3><p>Kelola informasi tebar, umur, ukuran, populasi, dan perkembangan biomassa ikan.</p></article>
+      <article class="feature"><div class="icon">📊</div><h3>Dashboard Kondisi Kolam</h3><p>Lihat ringkasan status kolam dan hal penting yang perlu diperhatikan.</p></article>
+      <article class="feature"><div class="icon">🧠</div><h3>Decision Support AI</h3><p>Dapatkan rekomendasi berbasis data yang dimasukkan, dengan validasi saat informasi belum konsisten.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="workflow" id="cara-kerja">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">SIMPLE GUIDED FLOW</span><h2 class="gold">MULAI DARI TELEGRAM</h2><p>Alur penggunaan dirancang bertahap agar data budidaya tersusun sebelum rekomendasi diberikan.</p></div>
+    <div class="steps">
+      <article class="step"><em>01</em><h3>Daftar Pembudidaya</h3><p>Buat profil dan pilih paket sesuai kapasitas pengelolaan.</p></article>
+      <article class="step"><em>02</em><h3>Atur Lokasi & Kolam</h3><p>Masukkan data lokasi, ukuran kolam, air, dan populasi ikan.</p></article>
+      <article class="step"><em>03</em><h3>Ukur Kondisi Air</h3><p>Masukkan hasil pengukuran dari alat yang dimiliki.</p></article>
+      <article class="step"><em>04</em><h3>Terima Arahan AI</h3><p>Pahami status kolam, panduan pakan, tindakan, dan jadwal recheck.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap dashboard">
+    <div class="dashboard-copy"><span class="kicker">AQUACULTURE DECISION CENTER</span><h2 class="gold">BUKAN SEKADAR CHATBOT.</h2><p>MIMOS AI Aquaculture membantu menyusun data kolam menjadi informasi yang lebih mudah ditindaklanjuti. Ketika data penting belum lengkap atau tidak konsisten, sistem dapat meminta konfirmasi sebelum memberikan arahan lanjutan.</p></div>
+    <div class="mock">
+      <div class="mock-top"><b>🐟 RINGKASAN KONDISI KOLAM</b><span class="status">● CONTOH TAMPILAN</span></div>
+      <div class="mock-title">KOLAM 01</div>
+      <div class="mock-grid"><div class="metric"><small>SUHU AIR</small><b>28.4°C</b></div><div class="metric"><small>pH AIR</small><b>7.1</b></div><div class="metric"><small>STATUS KOLAM</small><b style="color:#9ed6a6">WATCH</b></div><div class="metric"><small>AKTIVITAS</small><b>Recheck</b></div></div>
+      <div class="mock-advice">🤖 <b>ARAHAN AI</b><br>Perhatikan parameter yang perlu dipantau dan lakukan pemeriksaan ulang sesuai instruksi sistem.</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="paket">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">SIMPLE & FLEXIBLE SUBSCRIPTION</span><h2 class="gold">PILIH PAKET BUDIDAYA</h2><p>Mulai gratis, lalu tingkatkan kapasitas ketika jumlah kolam dan lokasi bertambah.</p></div>
+    <div class="plans">
+      <article class="plan"><span class="plan-label">MULAI GRATIS</span><h3>FREE</h3><div class="price">Rp0 <small>/ selamanya</small></div><ul><li>1 lokasi budidaya</li><li>Maksimal 1 kolam</li><li>Akses fitur dasar</li></ul><a class="btn outline" href="#kontak">MULAI GRATIS</a></article>
+      <article class="plan hot"><span class="plan-label">UNTUK PEMBUDIDAYA</span><h3>FARM</h3><div class="price">Rp15.000 <small>/ bulan</small></div><ul><li>1 lokasi budidaya</li><li>Maksimal 10 kolam</li><li>Pengelolaan multi-kolam</li></ul><a class="btn primary" href="#kontak">PILIH FARM</a></article>
+      <article class="plan"><span class="plan-label">MULTI LOKASI</span><h3>PRO</h3><div class="price">Rp50.000 <small>/ bulan</small></div><ul><li>Maksimal 10 lokasi</li><li>Maksimal 30 kolam per lokasi</li><li>Untuk pengelolaan skala besar</li></ul><a class="btn outline" href="#kontak">PILIH PRO</a></article>
+      <article class="plan"><span class="plan-label">SKALA USAHA</span><h3>BUSINESS</h3><div class="price">Mulai Rp200.000 <small>/ bulan</small></div><ul><li>Kapasitas khusus</li><li>Lokasi dan kolam sesuai kebutuhan</li><li>Konsultasi kebutuhan usaha</li></ul><a class="btn outline" href="#kontak">KONSULTASI</a></article>
+    </div>
+    <p class="note">Rekomendasi AI merupakan panduan berdasarkan data yang diberikan pengguna. Pengukuran akurat dan pengamatan langsung tetap diperlukan.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">NEED TO KNOW</span><h2 class="gold">PERTANYAAN UMUM</h2></div>
+    <div class="faq">
+      <details><summary>Apakah harus punya alat ukur sendiri?</summary><p>Pengguna memasukkan hasil pengukuran dari alat yang tersedia. Jenis data yang diminta mengikuti alat dan parameter yang dapat diukur.</p></details>
+      <details><summary>Apakah bisa mengelola lebih dari satu kolam?</summary><p>Bisa. Kapasitas lokasi dan kolam mengikuti paket yang dipilih.</p></details>
+      <details><summary>Apakah AI otomatis mengendalikan kolam?</summary><p>Tidak. MIMOS AI Aquaculture berfungsi sebagai asisten analisis dan panduan. Keputusan tindakan dan pelaksanaan di kolam tetap berada pada pembudidaya.</p></details>
+      <details><summary>Bagaimana jika data pengukuran belum lengkap?</summary><p>Sistem dapat meminta data tambahan atau konfirmasi sebelum melanjutkan rekomendasi yang memerlukan data tersebut.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="kontak">
+  <div class="wrap"><h2 class="gold">BUDIDAYA LEBIH TERARAH BERSAMA MIMOS</h2><p>Kenali paket yang sesuai dengan jumlah kolam dan kebutuhan budidaya Anda.</p><a class="btn primary" href="https://t.me/TradingOfTrader" target="_blank" rel="noopener">HUBUNGI MIMOS DI TELEGRAM</a></div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 MIMOS Universe · MIMOS AI Aquaculture</span><span><a href="index.html">← Kembali ke MIMOS Universe</a> · Maximizing the Minimize.</span></div></footer>
+</body>
+</html>
