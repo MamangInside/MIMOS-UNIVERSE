@@ -218,12 +218,29 @@ footer a:hover{color:var(--gold2)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 /* UNIVERSE: 5 kartu */
+.u6{background-image:url('assets/marketplace.jpg'),linear-gradient(135deg,#0b2a5a,#14213d 60%,#6b4b10);background-position:center 40%}
 .u5{background-image:url('assets/digital.jpg'),linear-gradient(135deg,#0b2a3b,#14213d 55%,#6b4b10)}
 #universe .grid4{grid-template-columns:repeat(6,1fr)}
 #universe .grid4 .card{grid-column:span 2}
-#universe .grid4 .card:nth-child(n+4){grid-column:span 3}
-@media (max-width:1024px){#universe .grid4{grid-template-columns:repeat(2,1fr)}#universe .grid4 .card,#universe .grid4 .card:nth-child(n+4){grid-column:auto}#universe .grid4 .card:nth-child(5){grid-column:1/-1}}
-@media (max-width:480px){#universe .grid4{grid-template-columns:1fr}#universe .grid4 .card:nth-child(5){grid-column:auto}}
+@media (max-width:1024px){#universe .grid4{grid-template-columns:repeat(2,1fr)}#universe .grid4 .card{grid-column:auto}}
+@media (max-width:480px){#universe .grid4{grid-template-columns:1fr}}
+/* MARKETPLACE */
+.mkt{display:grid;grid-template-columns:1fr 1.05fr;gap:20px;align-items:center;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:radial-gradient(ellipse at 80% 40%,rgba(30,80,160,.35),transparent 60%),#0a0c12}
+.mkt-copy{padding:30px 0 30px 30px;display:flex;flex-direction:column;gap:10px}
+.mkt-copy h2{font:700 clamp(24px,4vw,34px)/1.1 var(--display);letter-spacing:.04em}
+.mkt-tag{font:700 14px var(--body);letter-spacing:.18em;color:var(--gold2);margin:0}
+.mkt-p{color:var(--muted);font-size:14px;max-width:46ch;margin:0}
+.mkt-act{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.mkt-img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24%);mask-image:linear-gradient(90deg,transparent,#000 24%)}
+@media (max-width:760px){.mkt{grid-template-columns:1fr;gap:0}.mkt-copy{padding:24px 20px 6px}.mkt-img{-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%);mask-image:linear-gradient(180deg,transparent,#000 22%)}}
+/* MARKETPLACE HERO */
+.mp{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:radial-gradient(ellipse at 75% 45%,rgba(30,80,190,.38),transparent 62%),#05070f;padding:30px}
+.mp .kick{display:block;font:600 12px var(--body);letter-spacing:.22em;color:var(--gold);margin:10px 0 8px}
+.mp h2{font:700 clamp(30px,5vw,50px)/1.04 var(--display);letter-spacing:.02em;margin-bottom:12px}
+.mp p{color:var(--muted);max-width:42ch;margin-bottom:18px}
+.mp-cta{display:flex;gap:10px;flex-wrap:wrap}
+.mp-art img{display:block;width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 58%,transparent 100%)}
+@media (max-width:760px){.mp{grid-template-columns:1fr;padding:22px 18px;gap:6px}.mp-art{order:-1}}
 </style>
 </head>
 <body>
@@ -276,7 +293,7 @@ footer a:hover{color:var(--gold2)}
 <section id="universe">
   <div class="wrap">
     <div class="sec-head">
-      <div><h2 class="gold">OUR UNIVERSE</h2><p>Four projects. One ecosystem.</p></div>
+      <div><h2 class="gold">OUR UNIVERSE</h2><p>Six projects. One ecosystem.</p></div>
       <a class="more" href="#universe">Explore all projects</a>
     </div>
     <div class="grid4">
@@ -285,6 +302,22 @@ footer a:hover{color:var(--gold2)}
       <a class="card" href="segera.html?f=studio"><div class="art u3"></div><div class="body"><h3>MIMOS STUDIO</h3><span class="tag">Ideas become reality.</span><p>Branding, design, production, and creative services for your vision.</p><span class="go">Explore</span></div></a>
       <a class="card" href="aquaculture.html"><div class="art u4"></div><div class="body"><h3>MIMOS AI AQUACULTURE</h3><span class="tag">Smart farming. Sustainable future.</span><p>AI-driven aquaculture technology for a healthier planet.</p><span class="go">Explore</span></div></a>
       <a class="card" href="digital.html"><div class="art u5"></div><div class="body"><h3>MIMOS DIGITAL DEVELOPMENT</h3><span class="tag">Professional websites, affordable prices.</span><p>Websites for small businesses, from a simple one-page site to an ordering system.</p><span class="go">Explore</span></div></a>
+      <a class="card" href="segera.html?f=marketplace"><div class="art u6"></div><div class="body"><span class="badge" style="position:static;align-self:flex-start;margin-bottom:4px">COMING SOON</span><h3>MIMOS MARKETPLACE</h3><span class="tag">Discover. Shop. Connect.</span><p>A marketplace of trusted stores across the MIMOS Universe. Still in development.</p><span class="go">Coming soon</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="marketplace" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="mp">
+      <div class="mp-copy">
+        <span class="badge" style="position:static;display:inline-block">COMING SOON</span>
+        <span class="kick">MIMOS MARKETPLACE</span>
+        <h2>DISCOVER.<br><span class="gold">SHOP. CONNECT.</span></h2>
+        <p>Explore products from trusted stores across the MIMOS Universe.</p>
+        <div class="mp-cta"><a class="btn solid" href="segera.html?f=marketplace">Browse Products</a><a class="btn ghost" href="segera.html?f=marketplace">Open a Store</a></div>
+      </div>
+      <div class="mp-art"><img src="assets/marketplace-hero.webp" width="1080" height="660" loading="lazy" alt="MIMOS Marketplace: globe with the MIMOS eagle, gift boxes, shopping bags and a shopping cart"></div>
     </div>
   </div>
 </section>
